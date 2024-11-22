@@ -5,7 +5,6 @@ import {
   Search, // For docs search
   Moon, // For dark mode toggle
   Menu, // For mobile menu
-  ExternalLink, // For external links
 } from "lucide-react";
 
 // GitHub and HTML icon from react-icons
