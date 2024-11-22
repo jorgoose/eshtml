@@ -1,6 +1,6 @@
 # EsHTML Website
 
-Frontend website and playground for [EsHTML](https://github.com/weboes/eshtml) - a tool that converts HTML written with Spanish tags and attributes to standard HTML, designed to help Spanish speakers learn web development without the added barrier of English terminology.
+Frontend website and playground for [EsHTML](https://github.com/jorgoose/eshtml) - a tool that converts HTML written with Spanish tags and attributes to standard HTML, designed to help Spanish speakers learn web development without the added barrier of English terminology.
 
 ## Overview
 
@@ -14,10 +14,10 @@ This website provides:
 
 ```bash
 # Clone the repository
-git clone https://github.com/weboes/eshtml-web
+git clone https://github.com/jorgoose/eshtml
 
 # Install dependencies
-cd eshtml-web
+cd eshtml
 npm install
 
 # Run the development server
@@ -47,20 +47,20 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 - **Styling**: Tailwind CSS
 - **Code Editing**: Custom editor component
 - **Icons**: Lucide React
-- **Transpiler**: [html-es](https://github.com/weboes/eshtml) package
+- **Transpiler**: [html-es](https://github.com/jorgoose/eshtml) package
 
 ## Contributing
 
 We welcome contributions! If you're interested in helping improve the EsHTML website:
 
 1. Check out our [contributing guidelines](CONTRIBUTING.md)
-2. Look through our [open issues](https://github.com/weboes/eshtml-web/issues)
+2. Look through our [open issues](https://github.com/jorgoose/eshtml/issues)
 3. Join our [Discord community](https://discord.gg/yourdiscord)
 
 ## Related Projects
 
-- [EsHTML](https://github.com/weboes/eshtml) - Core transpiler
-- [VS Code EsHTML](https://github.com/weboes/vscode-eshtml) - VS Code extension
+- [EsHTML](https://github.com/jorgoose/eshtml) - Core transpiler
+- [VS Code EsHTML](https://github.com/jorgoose/vscode-eshtml) - VS Code extension
 
 ## License
 
