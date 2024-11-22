@@ -31,3 +31,20 @@ body {
     background-position: 0% 50%;
   }
 }
+
+/* Override Prism.js theme colors to match our theme */
+.token.tag {
+  color: #e06c75;
+}
+.token.attr-name {
+  color: #d19a66;
+}
+.token.attr-value {
+  color: #98c379;
+}
+.token.string {
+  color: #98c379;
+}
+.token.punctuation {
+  color: #abb2bf;
+}
