@@ -51,12 +51,12 @@ export default function Playground() {
   return (
     <main className="min-h-screen bg-gray-950">
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="relative max-w-7xl mx-auto px-2 sm:px-4 py-12">
         <h1 className="text-4xl font-bold text-white mb-8">
           EsHTML Playground
         </h1>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-4">
           {/* Editor Container */}
           <div className="rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
             {/* Editor Header */}
@@ -80,7 +80,8 @@ export default function Playground() {
               <div className="flex">
                 <LineNumbers count={eshtmlCode.split('\n').length} />
                 <textarea
-                  className="w-full bg-transparent text-gray-300 p-4 font-mono text-sm focus:outline-none resize-none leading-6"
+                  className="w-full h-[500px] bg-transparent text-gray-300 p-4 font-mono text-sm focus:outline-none resize-none leading-6 
+    scrollbar-thin scrollbar-track-gray-900 scrollbar-thumb-gray-700 hover:scrollbar-thumb-gray-600"
                   value={eshtmlCode}
                   onChange={(e) => setEshtmlCode(e.target.value)}
                 ></textarea>
@@ -104,7 +105,7 @@ export default function Playground() {
               </div>
             </div>
             {/* Browser Content */}
-            <div className="bg-white h-96 overflow-auto shadow-inner">
+            <div className="bg-white h-[500px] overflow-auto shadow-inner">
               {transpileError ? (
                 <div className="p-4 text-red-600">
                   Error en la conversión: {transpileError}
