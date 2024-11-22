@@ -133,9 +133,10 @@ export default function Playground() {
               </div>
               <div className="bg-gray-900/50 flex">
                 <LineNumbers count={transpiledHtml.split('\n').length} />
-                <pre className="w-full p-4 text-gray-300 font-mono text-sm whitespace-pre leading-6">
-                  {transpileError ? 'Error en la conversión' : transpiledHtml}
-                </pre>
+                <CodeEditor 
+                  code={transpileError ? 'Error en la conversión' : transpiledHtml}
+                  readOnly={true}
+                />
               </div>
             </div>
           )}
