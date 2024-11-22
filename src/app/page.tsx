@@ -1,7 +1,6 @@
 // src/app/page.tsx
 import Link from "next/link";
 import {
-  MessageCircle, // For Discord/community
   Search, // For docs search
   Moon, // For dark mode toggle
   Menu, // For mobile menu
@@ -42,15 +41,6 @@ function Nav() {
             >
               <AiOutlineGithub className="w-4 h-4" />
               GitHub
-            </a>
-            <a
-              href="https://discord.gg/yourdiscord"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm flex items-center gap-2"
-            >
-              <MessageCircle className="w-4 h-4" />
-              Community
             </a>
             <button
               className="text-gray-300 hover:text-white p-2 rounded-md"
