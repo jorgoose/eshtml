@@ -3,6 +3,7 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { EsHTMLTranspiler } from 'html-es';
+import CodeEditor from '../../components/CodeEditor';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 
 function LineNumbers({ count }: { count: number }) {
@@ -77,14 +78,12 @@ export default function Playground() {
             </div>
             {/* Editor Content */}
             <div className="bg-gray-900/50">
-              <div className="flex">
+              <div className="flex h-[500px]">
                 <LineNumbers count={eshtmlCode.split('\n').length} />
-                <textarea
-                  className="w-full h-[500px] bg-transparent text-gray-300 p-4 font-mono text-sm focus:outline-none resize-none leading-6 
-    scrollbar-thin scrollbar-track-gray-900 scrollbar-thumb-gray-700 hover:scrollbar-thumb-gray-600"
-                  value={eshtmlCode}
-                  onChange={(e) => setEshtmlCode(e.target.value)}
-                ></textarea>
+                <CodeEditor 
+                  code={eshtmlCode}
+                  onChange={setEshtmlCode}
+                />
               </div>
             </div>
           </div>
