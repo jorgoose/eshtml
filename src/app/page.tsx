@@ -1,12 +1,15 @@
 // src/app/page.tsx
 import Link from "next/link";
 import {
-  Github, // For GitHub link
   MessageCircle, // For Discord/community
   Search, // For docs search
   Moon, // For dark mode toggle
   Menu, // For mobile menu
+  ExternalLink, // For external links
 } from "lucide-react";
+
+// GitHub and HTML icon from react-icons
+import { AiOutlineHtml5, AiOutlineGithub } from "react-icons/ai";
 
 function Nav() {
   return (
@@ -31,12 +34,12 @@ function Nav() {
               Docs
             </Link>
             <a
-              href="https://github.com/yourusername/eshtml"
+              href="https://github.com/jorgoose/eshtml"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm flex items-center gap-2"
             >
-              <Github className="w-4 h-4" />
+              <AiOutlineGithub className="w-4 h-4" />
               GitHub
             </a>
             <a
@@ -71,82 +74,123 @@ function Nav() {
   );
 }
 
+// Create a new component for the EsHTML logo
+function EsHtmlLogo() {
+  return (
+    <div className="flex flex-col items-center justify-center w-64 h-64">
+      {/* EsHTML Text */}
+      <div className="mb-4 text-center">
+        <span className="text-5xl font-bold">
+          <span className="text-white">Es</span>
+          <span className="text-orange-500">HTML</span>
+        </span>
+      </div>
+      
+      {/* HTML5 Icon */}
+      <div className="text-orange-500">
+        <AiOutlineHtml5 className="w-48 h-48" />
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      <Nav />
-      {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-32">
-        <div className="flex flex-col lg:flex-row items-center justify-between">
-          {/* Left side - Text */}
-          <div className="space-y-8 lg:w-1/2">
-            <h1 className="text-7xl font-bold">
-              <span className="text-white">Es</span>
-              <span className="text-orange-500">HTML</span>
-            </h1>
-            <h2 className="text-4xl text-gray-100 font-light leading-tight">
-              HTML nativo en Español
-            </h2>
-            <p className="text-gray-400 text-xl">
-              Conoce el desarrollo web en tu idioma: EsHTML elimina la barrera del idioma 
-              permitiéndote entender HTML usando palabras en español que te resultan familiares.
-            </p>
-            <div className="flex space-x-4">
-              <Link
-                href="/playground"
-                className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-medium transition-colors"
-              >
-                Empezar con EsHTML
-              </Link>
-              <Link
-                href="/docs"
-                className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-medium transition-colors"
-              >
-                Tutorial Interactivo
-              </Link>
-            </div>
-          </div>
+    <main className="relative min-h-screen overflow-hidden">
+      {/* Animated Background */}
+      <div 
+        className="fixed inset-0 z-0"
+        style={{
+          background: `
+            linear-gradient(
+              45deg,
+              rgb(17, 24, 39) 0%,
+              rgb(88, 28, 7) 25%,
+              rgb(17, 24, 39) 50%,
+              rgb(88, 28, 7) 75%,
+              rgb(17, 24, 39) 100%
+            )
+          `,
+          backgroundSize: '400% 400%',
+          animation: 'gradient 15s ease infinite',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-3xl"></div>
+      </div>
 
-          {/* Right side - Logo/Visual */}
-          <div className="lg:w-1/2 mt-12 lg:mt-0">
-            <div className="bg-orange-500 w-64 h-64 rounded-3xl mx-auto">
-              <div className="p-12">
-                <span className="text-white text-8xl font-bold">Es</span>
-                <span className="text-white text-6xl">HTML</span>
+      {/* Content */}
+      <div className="relative z-10">
+        <Nav />
+        {/* Hero Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-32">
+          <div className="flex flex-col lg:flex-row items-center justify-between">
+            {/* Left side - Text */}
+            <div className="space-y-8 lg:w-1/2">
+              <h1 className="text-7xl font-bold">
+                <span className="text-white">Es</span>
+                <span className="text-orange-500">HTML</span>
+              </h1>
+              <h2 className="text-4xl text-gray-100 font-light leading-tight">
+                HTML nativo en Español
+              </h2>
+              <p className="text-gray-400 text-xl">
+                Conoce el desarrollo web en tu idioma: EsHTML elimina la barrera del idioma 
+                permitiéndote entender HTML usando palabras en español que te resultan familiares.
+              </p>
+              <div className="flex space-x-4">
+                <Link
+                  href="/playground"
+                  className="px-6 py-3 bg-orange-800 hover:bg-orange-600 text-white rounded-lg font-semibold tracking-wide text-shadow transition-colors"
+                  style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}
+                >
+                  Empezar con EsHTML
+                </Link>
+                <Link
+                  href="/docs"
+                  className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-semibold tracking-wide text-shadow transition-colors"
+                  style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}
+                >
+                  Tutorial Interactivo
+                </Link>
               </div>
             </div>
+
+            {/* Right side - Logo/Visual */}
+            <div className="lg:w-1/2 mt-12 lg:mt-0 flex items-center justify-center">
+              <EsHtmlLogo />
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Feature Cards */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-        <div className="grid md:grid-cols-3 gap-6">
-          <FeatureCard
-            title="Sintaxis en Español"
-            description="EsHTML es ideal para personas hispanohablantes que quieren comenzar con desarrollo web, ya que las etiquetas están escritas en Español"
-          />
-          <FeatureCard
-            title="Compatibilidad Total"
-            description="EsHTML se convierte automáticamente a HTML estándar, manteniendo total compatibilidad con navegadores y herramientas existentes"
-          />
-          <FeatureCard
-            title="Basado en HTML"
-            description="EsHTML aprovecha toda la potencia de HTML, permitiéndote aprender desarrollo web sin la barrera del idioma"
-          />
+        {/* Feature Cards */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+            <div className="grid md:grid-cols-3 gap-6">
+            <FeatureCard
+              title="Sintaxis en Español"
+              description="EsHTML es ideal para personas hispanohablantes que quieren aprender conceptos básicos de desarrollo web usando etiquetas en Español"
+            />
+            <FeatureCard
+              title="Compatibilidad Total"
+              description="EsHTML se convierte automáticamente a HTML estándar, manteniendo total compatibilidad con navegadores y herramientas existentes"
+            />
+            <FeatureCard
+              title="Basado en HTML"
+              description="EsHTML aprovecha la simplicidad de HTML, permitiéndote entender los conceptos fundamentales del desarrollo web sin la barrera del idioma"
+            />
+            </div>
         </div>
-      </div>
 
-      {/* Code Example Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-        <h2 className="text-4xl font-semibold text-center text-white mb-8">
-          HTML con sintaxis en Español
-        </h2>
-        <p className="text-gray-400 text-center mb-12">
-          Escribe código HTML en Español y se convertirá automáticamente a HTML
-          estándar
-        </p>
-        <CodeExample />
+        {/* Code Example Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+          <h2 className="text-4xl font-semibold text-center text-white mb-8">
+            HTML con sintaxis en Español
+          </h2>
+          <p className="text-gray-400 text-center mb-12">
+            Escribe código HTML en Español y se convertirá automáticamente a HTML
+            estándar
+          </p>
+          <CodeExample />
+        </div>
       </div>
     </main>
   );
