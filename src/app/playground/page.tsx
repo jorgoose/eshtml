@@ -8,7 +8,7 @@ import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 
 function LineNumbers({ count }: { count: number }) {
   return (
-    <div className="select-none pr-4 text-right text-gray-600 font-mono text-sm">
+    <div className="select-none pr-4 text-right text-gray-600 font-mono text-sm py-4 ml-2">
       {Array.from({ length: count }).map((_, i) => (
         <div key={i} className="leading-6">
           {i + 1}
@@ -62,18 +62,8 @@ export default function Playground() {
           <div className="rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
             {/* Editor Header */}
             <div className="bg-gray-950/80 border-b border-gray-800">
-              <div className="px-4 py-3 bg-gray-900/80 border-r border-gray-800 w-full flex justify-between items-center">
+              <div className="px-4 py-3 bg-gray-900/80 w-full">
                 <span className="text-gray-300 text-sm font-medium">entrada.eshtml</span>
-                <button
-                  onClick={() => setShowTranspiled(!showTranspiled)}
-                  className="text-gray-400 hover:text-orange-500 transition-colors focus:outline-none"
-                >
-                  {showTranspiled ? (
-                    <AiOutlineUp className="w-5 h-5" />
-                  ) : (
-                    <AiOutlineDown className="w-5 h-5" />
-                  )}
-                </button>
               </div>
             </div>
             {/* Editor Content */}
