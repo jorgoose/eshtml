@@ -79,16 +79,16 @@ function EsHtmlLogo() {
   return (
     <div className="flex flex-col items-center justify-center w-64 h-64">
       {/* EsHTML Text */}
-      <div className="mb-4 text-center">
+      {/* <div className="mb-4 text-center">
         <span className="text-5xl font-bold">
           <span className="text-white">Es</span>
           <span className="text-orange-500">HTML</span>
         </span>
-      </div>
+      </div> */}
       
       {/* HTML5 Icon */}
       <div className="text-orange-500">
-        <AiOutlineHtml5 className="w-48 h-48" />
+        <AiOutlineHtml5 className="w-72 h-72" />
       </div>
     </div>
   );
