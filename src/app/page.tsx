@@ -1,101 +1,281 @@
-import Image from "next/image";
+// src/app/page.tsx
+import Link from "next/link";
+import {
+  Github, // For GitHub link
+  MessageCircle, // For Discord/community
+  Search, // For docs search
+  Moon, // For dark mode toggle
+  Menu, // For mobile menu
+} from "lucide-react";
+
+function Nav() {
+  return (
+    <nav className="fixed w-full bg-gray-900/80 backdrop-blur-sm border-b border-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-2">
+            <span className="text-2xl font-bold">
+              <span className="text-white">Es</span>
+              <span className="text-orange-500">HTML</span>
+            </span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Link
+              href="/docs"
+              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm flex items-center gap-2"
+            >
+              <Search className="w-4 h-4" />
+              Docs
+            </Link>
+            <a
+              href="https://github.com/yourusername/eshtml"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm flex items-center gap-2"
+            >
+              <Github className="w-4 h-4" />
+              GitHub
+            </a>
+            <a
+              href="https://discord.gg/yourdiscord"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm flex items-center gap-2"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Community
+            </a>
+            <button
+              className="text-gray-300 hover:text-white p-2 rounded-md"
+              aria-label="Toggle dark mode"
+            >
+              <Moon className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              className="text-gray-300 hover:text-white p-2 rounded-md"
+              aria-label="Open menu"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <Nav />
+      {/* Hero Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-32">
+        <div className="flex flex-col lg:flex-row items-center justify-between">
+          {/* Left side - Text */}
+          <div className="space-y-8 lg:w-1/2">
+            <h1 className="text-7xl font-bold">
+              <span className="text-white">Es</span>
+              <span className="text-orange-500">HTML</span>
+            </h1>
+            <h2 className="text-4xl text-gray-100 font-light leading-tight">
+              HTML nativo en Español
+            </h2>
+            <p className="text-gray-400 text-xl">
+              Conoce el desarrollo web en tu idioma: EsHTML elimina la barrera del idioma 
+              permitiéndote entender HTML usando palabras en español que te resultan familiares.
+            </p>
+            <div className="flex space-x-4">
+              <Link
+                href="/playground"
+                className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-medium transition-colors"
+              >
+                Empezar con EsHTML
+              </Link>
+              <Link
+                href="/docs"
+                className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-medium transition-colors"
+              >
+                Tutorial Interactivo
+              </Link>
+            </div>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          {/* Right side - Logo/Visual */}
+          <div className="lg:w-1/2 mt-12 lg:mt-0">
+            <div className="bg-orange-500 w-64 h-64 rounded-3xl mx-auto">
+              <div className="p-12">
+                <span className="text-white text-8xl font-bold">Es</span>
+                <span className="text-white text-6xl">HTML</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </div>
+
+      {/* Feature Cards */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div className="grid md:grid-cols-3 gap-6">
+          <FeatureCard
+            title="Sintaxis en Español"
+            description="EsHTML es ideal para personas hispanohablantes que quieren comenzar con desarrollo web, ya que las etiquetas están escritas en Español"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <FeatureCard
+            title="Compatibilidad Total"
+            description="EsHTML se convierte automáticamente a HTML estándar, manteniendo total compatibilidad con navegadores y herramientas existentes"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <FeatureCard
+            title="Basado en HTML"
+            description="EsHTML aprovecha toda la potencia de HTML, permitiéndote aprender desarrollo web sin la barrera del idioma"
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </div>
+
+      {/* Code Example Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <h2 className="text-4xl font-semibold text-center text-white mb-8">
+          HTML con sintaxis en Español
+        </h2>
+        <p className="text-gray-400 text-center mb-12">
+          Escribe código HTML en Español y se convertirá automáticamente a HTML
+          estándar
+        </p>
+        <CodeExample />
+      </div>
+    </main>
+  );
+}
+
+function FeatureCard({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="p-6 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700">
+      <h3 className="text-xl font-semibold text-white mb-3">{title}</h3>
+      <p className="text-gray-400">{description}</p>
+    </div>
+  );
+}
+
+function CodeExample() {
+  return (
+    <div className="grid lg:grid-cols-3 gap-6">
+      {/* EsHTML Editor - Col 1 */}
+      <div className="rounded-lg overflow-hidden">
+        {/* Editor Tab Bar */}
+        <div className="bg-gray-950 border-b border-gray-800 flex items-center">
+          <div className="px-4 py-2 bg-gray-900 border-r border-gray-800 flex items-center">
+            <span className="text-gray-400 text-sm">ejemplo.eshtml</span>
+          </div>
+        </div>
+        
+        {/* Editor Content */}
+        <div className="bg-gray-900 p-4 font-mono text-sm flex">
+          {/* Line Numbers */}
+          <div className="text-gray-600 pr-4 select-none text-right">
+            {Array.from({length: 9}).map((_, i) => (
+              <div key={i}>{i + 1}</div>
+            ))}
+          </div>
+          
+          {/* Code */}
+          <pre className="text-gray-300">
+            <code>{`<titulo>Mi Página</titulo>
+<cuerpo>
+  <encabezado>
+    <h1>¡Hola Mundo!</h1>
+  </encabezado>
+  
+  <seccion clase="contenido">
+    <parrafo>
+      Este es un ejemplo de EsHTML
+    </parrafo>
+  </seccion>
+</cuerpo>`}</code>
+          </pre>
+        </div>
+
+        {/* Status Bar */}
+        <div className="bg-gray-800 text-gray-400 text-xs px-2 py-1 flex justify-between">
+          <span>EsHTML</span>
+          <span>UTF-8</span>
+        </div>
+      </div>
+
+      {/* HTML Editor - Col 2 */}
+      <div className="rounded-lg overflow-hidden">
+        {/* Editor Tab Bar */}
+        <div className="bg-gray-950 border-b border-gray-800 flex items-center">
+          <div className="px-4 py-2 bg-gray-900 border-r border-gray-800 flex items-center">
+            <span className="text-gray-400 text-sm">example.html</span>
+          </div>
+        </div>
+
+        {/* Editor Content */}
+        <div className="bg-gray-900 p-4 font-mono text-sm flex">
+          {/* Line Numbers */}
+          <div className="text-gray-600 pr-4 select-none text-right">
+            {Array.from({length: 9}).map((_, i) => (
+              <div key={i}>{i + 1}</div>
+            ))}
+          </div>
+
+          {/* Code */}
+          <pre className="text-gray-300">
+            <code>{`<title>Mi Página</title>
+<body>
+  <header>
+    <h1>¡Hola Mundo!</h1>
+  </header>
+  
+  <section class="contenido">
+    <p>
+      Este es un ejemplo de EsHTML
+    </p>
+  </section>
+</body>`}</code>
+          </pre>
+        </div>
+
+        {/* Status Bar */}
+        <div className="bg-gray-800 text-gray-400 text-xs px-2 py-1 flex justify-between">
+          <span>HTML</span>
+          <span>UTF-8</span>
+        </div>
+      </div>
+
+      {/* Browser Preview - Col 3 */}
+      <div className="rounded-lg overflow-hidden">
+        {/* Browser Chrome */}
+        <div className="bg-gray-950 border-b border-gray-800 flex items-center px-4 py-2">
+          <div className="flex items-center space-x-2">
+            <div className="flex space-x-1.5">
+              <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+            </div>
+            <div className="ml-4 bg-gray-900 rounded px-3 py-1">
+              <span className="text-gray-400 text-xs">localhost:3000</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Browser Content */}
+        <div className="bg-gray-900 p-6">
+          <h1 className="text-2xl font-bold text-white mb-4">¡Hola Mundo!</h1>
+          <p className="text-gray-300">Este es un ejemplo de EsHTML</p>
+        </div>
+      </div>
     </div>
   );
 }
