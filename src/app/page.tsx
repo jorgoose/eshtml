@@ -234,18 +234,20 @@ function CodeExample() {
           
           {/* Code */}
           <pre className="text-gray-300">
-            <code>{`<titulo>Mi Página</titulo>
-<cuerpo>
-  <encabezado>
-    <h1>¡Hola Mundo!</h1>
-  </encabezado>
-  
-  <seccion clase="contenido">
-    <parrafo>
-      Este es un ejemplo de EsHTML
-    </parrafo>
-  </seccion>
-</cuerpo>`}</code>
+            <code>{`<html>
+  <título>Mi Página</título>
+  <cuerpo>
+    <encabezado>
+      <e1>¡Hola Mundo!</e1>
+    </encabezado>
+    
+    <sección clase="contenido">
+      <p>
+        Este es un ejemplo de EsHTML
+      </p>
+    </sección>
+  </cuerpo>
+</html>`}</code>
           </pre>
         </div>
 
@@ -276,18 +278,20 @@ function CodeExample() {
 
           {/* Code */}
           <pre className="text-gray-300">
-            <code>{`<title>Mi Página</title>
-<body>
-  <header>
-    <h1>¡Hola Mundo!</h1>
-  </header>
-  
-  <section class="contenido">
-    <p>
-      Este es un ejemplo de EsHTML
-    </p>
-  </section>
-</body>`}</code>
+            <code>{`<html>
+  <title>Mi Página</title>
+  <body>
+    <header>
+      <h1>¡Hola Mundo!</h1>
+    </header>
+    
+    <section class="contenido">
+      <p>
+        Este es un ejemplo de EsHTML
+      </p>
+    </section>
+  </body>
+</html>`}</code>
           </pre>
         </div>
 
