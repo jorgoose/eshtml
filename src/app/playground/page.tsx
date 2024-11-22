@@ -89,7 +89,7 @@ export default function Playground() {
                   <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                 </div>
                 <div className="ml-4 bg-gray-900/80 rounded-md px-3 py-1.5">
-                  <span className="text-gray-400 text-xs">localhost:3000</span>
+                  <span className="text-gray-400 text-xs">entrada.eshtml</span>
                 </div>
               </div>
             </div>
