@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EsHTML Website
+
+Frontend website and playground for [EsHTML](https://github.com/weboes/eshtml) - a tool that converts HTML written with Spanish tags and attributes to standard HTML, designed to help Spanish speakers learn web development without the added barrier of English terminology.
+
+## Overview
+
+This website provides:
+- Documentation and information about EsHTML
+- Interactive playground for writing and previewing EsHTML
+- Resources for learning web development in Spanish
+- Community links and contribution guidelines
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Clone the repository
+git clone https://github.com/weboes/eshtml-web
+
+# Install dependencies
+cd eshtml-web
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Homepage
+- Overview of EsHTML and its purpose
+- Live code examples showing EsHTML → HTML conversion
+- Feature breakdowns and benefits
+- Links to resources and community
 
-## Learn More
+### Interactive Playground
+- Real-time EsHTML to HTML conversion
+- Live preview of output
+- Syntax highlighting
+- Error handling and validation
+- Collapsible transpiled code view
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework**: Next.js 14 with App Router
+- **Styling**: Tailwind CSS
+- **Code Editing**: Custom editor component
+- **Icons**: Lucide React
+- **Transpiler**: [html-es](https://github.com/weboes/eshtml) package
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+We welcome contributions! If you're interested in helping improve the EsHTML website:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Check out our [contributing guidelines](CONTRIBUTING.md)
+2. Look through our [open issues](https://github.com/weboes/eshtml-web/issues)
+3. Join our [Discord community](https://discord.gg/yourdiscord)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Related Projects
+
+- [EsHTML](https://github.com/weboes/eshtml) - Core transpiler
+- [VS Code EsHTML](https://github.com/weboes/vscode-eshtml) - VS Code extension
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
