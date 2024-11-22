@@ -9,6 +9,8 @@ import {
 
 // GitHub and HTML icon from react-icons
 import { AiOutlineHtml5, AiOutlineGithub } from "react-icons/ai";
+import CodeEditor from '../components/CodeEditor';
+import LineNumbers from '../components/LineNumbers';
 
 function Nav() {
   return (
@@ -212,45 +214,38 @@ function FeatureCard({
 }
 
 function CodeExample() {
+  const eshtmlCode = `<html>
+  <e1>¡Hola Mundo!</e1>
+  <cuerpo>
+    <p>Este es un ejemplo de EsHTML</p>
+  </cuerpo>
+</html>`;
+
+  const transpiledHtml = `<html>
+  <h1>¡Hola Mundo!</h1>
+  <body>
+    <p>Este es un ejemplo de EsHTML</p>
+  </body>
+</html>`;
+
   return (
     <div className="grid lg:grid-cols-3 gap-6">
-      {/* EsHTML Editor - Col 1 */}
+      {/* EsHTML Code Snippet */}
       <div className="rounded-lg overflow-hidden">
-        {/* Editor Tab Bar */}
+        {/* Editor Header */}
         <div className="bg-gray-950 border-b border-gray-800 flex items-center">
           <div className="px-4 py-2 bg-gray-900 border-r border-gray-800 flex items-center">
-            <span className="text-gray-400 text-sm">ejemplo.eshtml</span>
+            <span className="text-gray-300 text-sm font-medium">entrada.eshtml</span>
           </div>
         </div>
-
-        {/* Editor Content */}
-        <div className="bg-gray-900 p-4 font-mono text-sm flex">
-          {/* Line Numbers */}
-          <div className="text-gray-600 pr-4 select-none text-right">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <div key={i}>{i + 1}</div>
-            ))}
-          </div>
-
-          {/* Code */}
-          <pre className="text-gray-300">
-            <code>{`<html>
-  <título>Mi Página</título>
-  <cuerpo>
-    <encabezado>
-      <e1>¡Hola Mundo!</e1>
-    </encabezado>
-    
-    <sección clase="contenido">
-      <p>
-        Este es un ejemplo de EsHTML
-      </p>
-    </sección>
-  </cuerpo>
-</html>`}</code>
-          </pre>
+        {/* Code Content */}
+        <div className="bg-gray-900/50 flex">
+          <LineNumbers count={eshtmlCode.split('\n').length} />
+          <CodeEditor
+            code={eshtmlCode}
+            readOnly={true}
+          />
         </div>
-
         {/* Status Bar */}
         <div className="bg-gray-800 text-gray-400 text-xs px-2 py-1 flex justify-between">
           <span>EsHTML</span>
@@ -258,43 +253,22 @@ function CodeExample() {
         </div>
       </div>
 
-      {/* HTML Editor - Col 2 */}
+      {/* Transpiled HTML Code Snippet */}
       <div className="rounded-lg overflow-hidden">
-        {/* Editor Tab Bar */}
+        {/* Editor Header */}
         <div className="bg-gray-950 border-b border-gray-800 flex items-center">
           <div className="px-4 py-2 bg-gray-900 border-r border-gray-800 flex items-center">
-            <span className="text-gray-400 text-sm">example.html</span>
+            <span className="text-gray-300 text-sm font-medium">salida.html</span>
           </div>
         </div>
-
-        {/* Editor Content */}
-        <div className="bg-gray-900 p-4 font-mono text-sm flex">
-          {/* Line Numbers */}
-          <div className="text-gray-600 pr-4 select-none text-right">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <div key={i}>{i + 1}</div>
-            ))}
-          </div>
-
-          {/* Code */}
-          <pre className="text-gray-300">
-            <code>{`<html>
-  <title>Mi Página</title>
-  <body>
-    <header>
-      <h1>¡Hola Mundo!</h1>
-    </header>
-    
-    <section class="contenido">
-      <p>
-        Este es un ejemplo de EsHTML
-      </p>
-    </section>
-  </body>
-</html>`}</code>
-          </pre>
+        {/* Code Content */}
+        <div className="bg-gray-900/50 flex">
+          <LineNumbers count={transpiledHtml.split('\n').length} />
+          <CodeEditor
+            code={transpiledHtml}
+            readOnly={true}
+          />
         </div>
-
         {/* Status Bar */}
         <div className="bg-gray-800 text-gray-400 text-xs px-2 py-1 flex justify-between">
           <span>HTML</span>
@@ -302,9 +276,9 @@ function CodeExample() {
         </div>
       </div>
 
-      {/* Browser Preview - Col 3 */}
+      {/* Browser Preview */}
       <div className="rounded-lg overflow-hidden">
-        {/* Browser Chrome */}
+        {/* Browser Header */}
         <div className="bg-gray-950 border-b border-gray-800 flex items-center px-4 py-2">
           <div className="flex items-center space-x-2">
             <div className="flex space-x-1.5">
@@ -317,11 +291,13 @@ function CodeExample() {
             </div>
           </div>
         </div>
-
         {/* Browser Content */}
-        <div className="bg-gray-900 p-6">
-          <h1 className="text-2xl font-bold text-white mb-4">¡Hola Mundo!</h1>
-          <p className="text-gray-300">Este es un ejemplo de EsHTML</p>
+        <div className="bg-white h-full overflow-auto shadow-inner">
+          <iframe
+            srcDoc={transpiledHtml}
+            title="Vista Previa"
+            className="w-full h-full"
+          ></iframe>
         </div>
       </div>
     </div>
