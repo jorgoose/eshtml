@@ -4,19 +4,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import { EsHTMLTranspiler } from 'html-es';
 import CodeEditor from '../../components/CodeEditor';
+import LineNumbers from '../../components/LineNumbers';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
-
-function LineNumbers({ count }: { count: number }) {
-  return (
-    <div className="select-none pr-4 text-right text-gray-600 font-mono text-sm py-4 ml-2">
-      {Array.from({ length: count }).map((_, i) => (
-        <div key={i} className="leading-6">
-          {i + 1}
-        </div>
-      ))}
-    </div>
-  );
-}
 
 export default function Playground() {
   const [eshtmlCode, setEshtmlCode] = useState(`<html>
