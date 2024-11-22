@@ -84,7 +84,7 @@ function EsHtmlLogo() {
           <span className="text-orange-500">HTML</span>
         </span>
       </div> */}
-      
+
       {/* HTML5 Icon */}
       <div className="text-orange-500">
         <AiOutlineHtml5 className="w-72 h-72" />
@@ -97,7 +97,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden">
       {/* Animated Background */}
-      <div 
+      <div
         className="fixed inset-0 z-0"
         style={{
           background: `
@@ -110,8 +110,8 @@ export default function Home() {
               rgb(17, 24, 39) 100%
             )
           `,
-          backgroundSize: '400% 400%',
-          animation: 'gradient 15s ease infinite',
+          backgroundSize: "400% 400%",
+          animation: "gradient 15s ease infinite",
         }}
       >
         <div className="absolute inset-0 bg-black/40 backdrop-blur-3xl"></div>
@@ -133,21 +133,22 @@ export default function Home() {
                 HTML nativo en Español
               </h2>
               <p className="text-gray-400 text-xl">
-                Conoce el desarrollo web en tu idioma: EsHTML elimina la barrera del idioma 
-                permitiéndote entender HTML usando palabras en español que te resultan familiares.
+                Conoce el desarrollo web en tu idioma: EsHTML elimina la barrera
+                del idioma permitiéndote entender HTML usando palabras en
+                español que te resultan familiares.
               </p>
               <div className="flex space-x-4">
                 <Link
                   href="/playground"
                   className="px-6 py-3 bg-orange-800 hover:bg-orange-600 text-white rounded-lg font-semibold tracking-wide text-shadow transition-colors"
-                  style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}
+                  style={{ textShadow: "0 1px 2px rgba(0,0,0,0.3)" }}
                 >
                   Empezar con EsHTML
                 </Link>
                 <Link
                   href="/docs"
                   className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-semibold tracking-wide text-shadow transition-colors"
-                  style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}
+                  style={{ textShadow: "0 1px 2px rgba(0,0,0,0.3)" }}
                 >
                   Tutorial Interactivo
                 </Link>
@@ -163,7 +164,7 @@ export default function Home() {
 
         {/* Feature Cards */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-            <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             <FeatureCard
               title="Sintaxis en Español"
               description="EsHTML es ideal para personas hispanohablantes que quieren aprender conceptos básicos de desarrollo web usando etiquetas en Español"
@@ -176,7 +177,7 @@ export default function Home() {
               title="Basado en HTML"
               description="EsHTML aprovecha la simplicidad de HTML, permitiéndote entender los conceptos fundamentales del desarrollo web sin la barrera del idioma"
             />
-            </div>
+          </div>
         </div>
 
         {/* Code Example Section */}
@@ -185,8 +186,8 @@ export default function Home() {
             HTML con sintaxis en Español
           </h2>
           <p className="text-gray-400 text-center mb-12">
-            Escribe código HTML en Español y se convertirá automáticamente a HTML
-            estándar
+            Escribe código HTML en Español y se convertirá automáticamente a
+            HTML estándar
           </p>
           <CodeExample />
         </div>
@@ -221,16 +222,16 @@ function CodeExample() {
             <span className="text-gray-400 text-sm">ejemplo.eshtml</span>
           </div>
         </div>
-        
+
         {/* Editor Content */}
         <div className="bg-gray-900 p-4 font-mono text-sm flex">
           {/* Line Numbers */}
           <div className="text-gray-600 pr-4 select-none text-right">
-            {Array.from({length: 12}).map((_, i) => (
+            {Array.from({ length: 12 }).map((_, i) => (
               <div key={i}>{i + 1}</div>
             ))}
           </div>
-          
+
           {/* Code */}
           <pre className="text-gray-300">
             <code>{`<html>
@@ -270,7 +271,7 @@ function CodeExample() {
         <div className="bg-gray-900 p-4 font-mono text-sm flex">
           {/* Line Numbers */}
           <div className="text-gray-600 pr-4 select-none text-right">
-            {Array.from({length: 12}).map((_, i) => (
+            {Array.from({ length: 12 }).map((_, i) => (
               <div key={i}>{i + 1}</div>
             ))}
           </div>
@@ -312,7 +313,7 @@ function CodeExample() {
               <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
             </div>
             <div className="ml-4 bg-gray-900 rounded px-3 py-1">
-              <span className="text-gray-400 text-xs">localhost:3000</span>
+              <span className="text-gray-400 text-xs">Vista Previa</span>
             </div>
           </div>
         </div>
