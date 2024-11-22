@@ -227,7 +227,7 @@ function CodeExample() {
         <div className="bg-gray-900 p-4 font-mono text-sm flex">
           {/* Line Numbers */}
           <div className="text-gray-600 pr-4 select-none text-right">
-            {Array.from({length: 9}).map((_, i) => (
+            {Array.from({length: 12}).map((_, i) => (
               <div key={i}>{i + 1}</div>
             ))}
           </div>
@@ -269,7 +269,7 @@ function CodeExample() {
         <div className="bg-gray-900 p-4 font-mono text-sm flex">
           {/* Line Numbers */}
           <div className="text-gray-600 pr-4 select-none text-right">
-            {Array.from({length: 9}).map((_, i) => (
+            {Array.from({length: 12}).map((_, i) => (
               <div key={i}>{i + 1}</div>
             ))}
           </div>
