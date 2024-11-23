@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import CodeEditor from '../../../components/CodeEditor';
 import LineNumbers from '../../../components/LineNumbers';
+import { Nav } from '../../../components/Nav';
 
 // Sidebar navigation structure
 const docsNavigation = {
@@ -97,39 +98,37 @@ function CodeExampleDocs({ eshtml, html }: { eshtml: string; html: string }) {
 export default function DocsPage() {
   return (
     <div className="min-h-screen bg-[#111827]">
-      <div className="flex">
-        {/* Container with large left padding */}
-        <div className="pl-64"> {/* 6rem (96px) left padding */}
-          {/* Left sidebar */}
-          <aside className="w-64 fixed top-0 bottom-0 bg-[#111827] border-r border-gray-800/40">
-            <nav className="h-full px-8 py-6">
-              {Object.entries(docsNavigation).map(([key, section]) => (
-                <div key={key} className="mb-6">
-                  <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-2">
-                    {section.title}
-                  </h2>
-                  <ul className="space-y-1">
-                    {section.items.map((item) => (
-                      <li key={item.href}>
-                        <Link 
-                          href={item.href}
-                          className="block px-2 py-1.5 text-gray-300 hover:text-white rounded hover:bg-gray-800/50 text-sm"
-                        >
-                          {item.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </nav>
-          </aside>
+      <Nav />
+      <div className="flex pt-16"> {/* Add pt-16 to account for navbar height */}
+        {/* Left sidebar - adjust top position */}
+        <div className="w-64 fixed top-16 bottom-0 bg-[#111827] border-r border-gray-800/40">
+          <nav className="h-full px-8 py-6">
+            {Object.entries(docsNavigation).map(([key, section]) => (
+              <div key={key} className="mb-6">
+                <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-2">
+                  {section.title}
+                </h2>
+                <ul className="space-y-1">
+                  {section.items.map((item) => (
+                    <li key={item.href}>
+                      <Link 
+                        href={item.href}
+                        className="block px-2 py-1.5 text-gray-300 hover:text-white rounded hover:bg-gray-800/50 text-sm"
+                      >
+                        {item.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
         </div>
 
-        {/* Adjust main content to align with new sidebar position */}
-        <main className="pl-[352px] w-full min-h-screen"> {/* 96px + 256px (24rem + 64rem) */}
-          <div className="max-w-[1400px] mx-auto px-16">
-            <div className="max-w-4xl mx-auto px-8 py-12">
+        {/* Main content area */}
+        <div className="flex-1 ml-64">
+          <div className="max-w-[1200px] mx-auto"> {/* Center content with max width */}
+            <div className="px-16 py-12"> {/* Consistent padding */}
               {/* Breadcrumb */}
               <div className="flex items-center text-sm text-gray-400 mb-8">
                 <Link href="/docs" className="hover:text-white">
@@ -140,7 +139,7 @@ export default function DocsPage() {
               </div>
 
               {/* Content */}
-              <article className="prose prose-invert max-w-none">
+              <article className="prose prose-invert max-w-3xl"> {/* Constrain content width */}
                 <h1 className="text-4xl font-bold text-white mb-4">{content.title}</h1>
                 <p className="text-xl text-gray-300 leading-relaxed">{content.description}</p>
 
@@ -149,7 +148,7 @@ export default function DocsPage() {
               </article>
 
               {/* Page navigation */}
-              <div className="mt-16 flex justify-between text-sm border-t border-gray-800/50 pt-8">
+              <div className="mt-16 max-w-3xl border-t border-gray-800/50 pt-8">
                 <div></div>
                 <Link 
                   href="/docs/introduccion/por-que-eshtml"
@@ -160,7 +159,7 @@ export default function DocsPage() {
               </div>
             </div>
           </div>
-        </main>
+        </div>
       </div>
     </div>
   );
