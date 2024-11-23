@@ -33,12 +33,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  themeColor: "#C2410C", // orange-700 to match the theme
-  viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: "/favicon.svg",
   },
-  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
