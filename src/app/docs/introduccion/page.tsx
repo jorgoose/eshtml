@@ -48,7 +48,7 @@ const content = {
     Al escribir el código, EsHTML lo convierte automáticamente a HTML estándar, permitiendo que funcione 
     en cualquier navegador o herramienta que soporte HTML.`,
   example: {
-    eshtml: `<titulo>Mi Página</titulo>
+    eshtml: `<título>Mi Página</título>
 <cuerpo>
   <encabezado>
     <e1>¡Hola Mundo!</e1>
