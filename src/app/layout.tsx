@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   themeColor: "#C2410C", // orange-700 to match the theme
   viewport: "width=device-width, initial-scale=1",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.svg",
   },
   manifest: "/site.webmanifest",
 };
