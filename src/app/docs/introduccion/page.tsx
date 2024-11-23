@@ -51,7 +51,7 @@ const content = {
     eshtml: `<titulo>Mi Página</titulo>
 <cuerpo>
   <encabezado>
-    <h1>¡Hola Mundo!</h1>
+    <e1>¡Hola Mundo!</e1>
   </encabezado>
 </cuerpo>`,
     html: `<title>Mi Página</title>
