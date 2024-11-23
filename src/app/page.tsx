@@ -16,15 +16,16 @@ function Nav() {
     <nav className="fixed w-full bg-gray-900/80 backdrop-blur-sm border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          {/* Logo with HTML5 icon */}
+          <Link href="/" className="flex items-center space-x-1">
+          <AiOutlineHtml5 className="w-8 h-8 text-orange-500" />
             <span className="text-2xl font-bold">
               <span className="text-white">Es</span>
               <span className="text-orange-500">HTML</span>
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Rest of navbar remains the same */}
           <div className="hidden md:flex items-center space-x-4">
             <Link
               href="/docs/introduccion"
@@ -50,7 +51,6 @@ function Nav() {
             </button>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               className="text-gray-300 hover:text-white p-2 rounded-md"
