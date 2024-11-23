@@ -53,12 +53,24 @@ const content = {
   <encabezado>
     <e1>¡Hola Mundo!</e1>
   </encabezado>
+  
+  <sección clase="contenido">
+    <p>
+      Este es un ejemplo de EsHTML
+    </p>
+  </sección>
 </cuerpo>`,
     html: `<title>Mi Página</title>
 <body>
   <header>
     <h1>¡Hola Mundo!</h1>
   </header>
+  
+  <section class="contenido">
+    <p>
+      Este es un ejemplo de EsHTML
+    </p>
+  </section>
 </body>`
   }
 };
