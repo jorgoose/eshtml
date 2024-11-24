@@ -1,7 +1,7 @@
 // src/app/docs/introduccion/por-que-eshtml/page.tsx
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Nav } from '../../../../components/Nav';
+import { Nav } from '@/components/Nav';
 
 // Import sidebar navigation from main docs
 const docsNavigation = {
