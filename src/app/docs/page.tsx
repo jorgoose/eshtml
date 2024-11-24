@@ -1,69 +1,14 @@
 // src/app/docs/page.tsx - Main docs landing
 import Link from 'next/link';
 import { Nav } from '@/components/Nav';
-
-const docsNavigation = {
-  introduccion: {
-    title: 'Introducción',
-    items: [
-      { title: '¿Qué es EsHTML?', href: '/docs/introduccion/que-es-eshtml' },
-      { title: '¿Por qué EsHTML?', href: '/docs/introduccion/por-que-eshtml' },
-      { title: 'Aprendizaje y Práctica', href: '/docs/introduccion/aprendizaje' }, 
-    ]
-  },
-  referencia: {
-    title: 'Referencia',
-    items: [
-      { title: 'Etiquetas', href: '/docs/referencia/etiquetas' },
-      { title: 'Atributos', href: '/docs/referencia/atributos' },
-      { title: 'Sintaxis', href: '/docs/referencia/sintaxis' },
-    ]
-  },
-  herramientas: {
-    title: 'Herramientas',
-    items: [
-      { title: 'Paquete NPM', href: '/docs/herramientas/npm' },
-      { title: 'Extensión VS Code', href: '/docs/herramientas/vscode' },
-    ]
-  },
-  proyecto: {
-    title: 'Proyecto',
-    items: [
-      { title: 'Contribuir', href: '/docs/proyecto/contribuir' },
-      { title: 'Comunidad', href: '/docs/proyecto/comunidad' },
-    ]
-  }
-};
+import { DocsSidebar } from '@/components/DocsSidebar';
 
 export default function DocsPage() {
   return (
     <div className="min-h-screen bg-[#111827]">
       <Nav />
       <div className="flex pt-16">
-        {/* Left sidebar */}
-        <div className="w-64 fixed top-16 bottom-0 bg-[#111827] border-r border-gray-800/40">
-          <nav className="h-full px-8 py-6">
-            {Object.entries(docsNavigation).map(([key, section]) => (
-              <div key={key} className="mb-6">
-                <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-2">
-                  {section.title}
-                </h2>
-                <ul className="space-y-1">
-                  {section.items.map((item) => (
-                    <li key={item.href}>
-                      <Link 
-                        href={item.href}
-                        className="block px-2 py-1.5 text-gray-300 hover:text-white rounded hover:bg-gray-800/50 text-sm"
-                      >
-                        {item.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </nav>
-        </div>
+        <DocsSidebar activePath="/docs" />
 
         <div className="flex-1 ml-64">
           <div className="max-w-[1200px] mx-auto">
