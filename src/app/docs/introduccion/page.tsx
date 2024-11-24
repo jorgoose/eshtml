@@ -44,11 +44,13 @@ const docsNavigation = {
 // Main content for the introduction page
 const content = {
   title: 'EsHTML',
-  description: `EsHTML es una herramienta que permite escribir HTML usando etiquetas y atributos en español. 
-    Al escribir el código, EsHTML lo convierte automáticamente a HTML estándar, permitiendo que funcione 
-    en cualquier navegador o herramienta que soporte HTML.`,
+  description: `EsHTML hace que aprender los conceptos fundamentales de HTML sea más accesible para hablantes de español al permitirte escribir páginas web usando palabras en español puro. 
+    Escribes tu código usando EsHTML con palabras familiares, y nuestras herramientas te ayudan a traducirlo al HTML que los navegadores entienden.
+    
+    EsHTML está diseñado como una herramienta educativa para comprender los elementos básicos de HTML - como estructurar documentos, usar etiquetas, y organizar contenido - todo esto en Español.`,
   example: {
-    eshtml: `<título>Mi Página</título>
+    eshtml: `<!-- Un ejemplo simple en EsHTML -->
+<título>Mi Página</título>
 <cuerpo>
   <encabezado>
     <e1>¡Hola Mundo!</e1>
@@ -60,7 +62,8 @@ const content = {
     </p>
   </sección>
 </cuerpo>`,
-    html: `<title>Mi Página</title>
+    html: `<!-- La traducción automática a HTML -->
+<title>Mi Página</title>
 <body>
   <header>
     <h1>¡Hola Mundo!</h1>
