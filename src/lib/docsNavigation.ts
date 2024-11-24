@@ -5,7 +5,7 @@ export const docsNavigation = {
     items: [
       { title: '¿Qué es EsHTML?', href: '/docs/introduccion/que-es-eshtml' },
       { title: '¿Por qué EsHTML?', href: '/docs/introduccion/por-que-eshtml' },
-      { title: 'Aprendizaje y Práctica', href: '/docs/introduccion/aprendizaje' }, 
+      { title: 'Aprendizaje y Práctica', href: '/docs/introduccion/aprendizaje-y-practica' }, 
     ]
   },
   referencia: {

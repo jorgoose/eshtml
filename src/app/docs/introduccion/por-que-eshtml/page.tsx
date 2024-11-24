@@ -158,10 +158,10 @@ export default function PorQueEsHtmlPage() {
                     <ChevronLeft className="w-4 h-4" /> ¿Qué es EsHTML?
                   </Link>
                   <Link 
-                    href="/docs/introduccion/primeros-pasos"
+                    href="/docs/introduccion/aprendizaje-y-practica"
                     className="text-orange-500 hover:text-orange-400 flex items-center gap-1"
                   >
-                    Primeros Pasos <ChevronRight className="w-4 h-4" />
+                    Aprendizaje y Práctica <ChevronRight className="w-4 h-4" />
                   </Link>
                 </div>
               </article>
