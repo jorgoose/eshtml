@@ -6,12 +6,35 @@ const docsNavigation = {
   introduccion: {
     title: 'Introducción',
     items: [
-      { title: '¿Qué es EsHTML?', href: '/docs/introduccion/que-es-eshtml' },
+      { title: '¿Qué es EsHTML?', href: '/docs/introduccion' },
       { title: '¿Por qué EsHTML?', href: '/docs/introduccion/por-que-eshtml' },
       { title: 'Primeros pasos', href: '/docs/introduccion/primeros-pasos' },
     ]
   },
-  // ... other sections remain same
+  referencia: {
+    title: 'Referencia',
+    items: [
+      { title: 'Etiquetas', href: '/docs/referencia/etiquetas' },
+      { title: 'Atributos', href: '/docs/referencia/atributos' },
+      { title: 'Sintaxis', href: '/docs/referencia/sintaxis' },
+    ]
+  },
+  herramientas: {
+    title: 'Herramientas',
+    items: [
+      { title: 'Paquete NPM', href: '/docs/herramientas/npm' },
+      { title: 'Extensión VS Code', href: '/docs/herramientas/vscode' },
+      { title: 'Integración Build Tools', href: '/docs/herramientas/build-tools' },
+    ]
+  },
+  proyecto: {
+    title: 'Proyecto',
+    items: [
+      { title: 'Contribuir', href: '/docs/proyecto/contribuir' },
+      { title: 'Hoja de Ruta', href: '/docs/proyecto/roadmap' },
+      { title: 'Comunidad', href: '/docs/proyecto/comunidad' },
+    ]
+  }
 };
 
 export default function DocsPage() {
