@@ -62,7 +62,7 @@ const content = {
     </p>
   </sección>
 </cuerpo>`,
-    html: `<!-- La traducción automática a HTML -->
+    html: `<!-- La traducción a HTML de la EsHTML -->
 <title>Mi Página</title>
 <body>
   <header>
@@ -154,7 +154,7 @@ export default function DocsPage() {
               </div>
 
               {/* Content */}
-              <article className="prose prose-invert max-w-3xl"> {/* Constrain content width */}
+              <article className="prose prose-invert max-w-4xl"> {/* Constrain content width */}
                 <h1 className="text-4xl font-bold text-white mb-4">{content.title}</h1>
                 <p className="text-xl text-gray-300 leading-relaxed">{content.description}</p>
 
