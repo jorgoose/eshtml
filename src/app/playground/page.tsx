@@ -3,8 +3,8 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { EsHTMLTranspiler } from 'html-es';
-import CodeEditor from '../../components/CodeEditor';
-import LineNumbers from '../../components/LineNumbers';
+import CodeEditor from '@/components/CodeEditor';
+import LineNumbers from '@/components/LineNumbers';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 
 export default function Playground() {
