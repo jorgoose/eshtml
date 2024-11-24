@@ -91,7 +91,9 @@ export default function DocsPage() {
                   Docs
                 </Link>
                 <ChevronRight className="w-4 h-4 mx-2" />
-                <span className="text-white">Introducción</span>
+                <span className="text-gray-400">Introducción</span>
+                <ChevronRight className="w-4 h-4 mx-2" />
+                <span className="text-white">¿Qué es EsHTML?</span>
               </div>
 
               {/* Content */}
