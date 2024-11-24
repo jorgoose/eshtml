@@ -17,7 +17,7 @@ export function Nav() {
 
           <div className="hidden md:flex items-center space-x-4">
             <Link
-              href="/docs/introduccion"
+              href="/docs"
               className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm flex items-center gap-2"
             >
               <Search className="w-4 h-4" />
