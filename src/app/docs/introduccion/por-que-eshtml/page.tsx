@@ -152,10 +152,10 @@ export default function PorQueEsHtmlPage() {
                 {/* Navigation */}
                 <div className="mt-16 border-t border-gray-800/50 pt-8 flex justify-between">
                   <Link 
-                    href="/docs/introduccion"
+                    href="/docs/introduccion/que-es-eshtml"
                     className="text-orange-500 hover:text-orange-400 flex items-center gap-1"
                   >
-                    <ChevronLeft className="w-4 h-4" /> Introducción
+                    <ChevronLeft className="w-4 h-4" /> ¿Qué es EsHTML?
                   </Link>
                   <Link 
                     href="/docs/introduccion/primeros-pasos"
