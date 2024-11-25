@@ -1,6 +1,6 @@
 // src/app/docs/referencia/etiquetas/page.tsx
 import Link from 'next/link';
-import { ChevronLeft, ChevronRight, Search, Copy } from 'lucide-react';
+import { ChevronRight, Search } from 'lucide-react';
 import { Nav } from '@/components/Nav';
 import { DocsSidebar } from '@/components/DocsSidebar';
 import { tagData, TagDefinition } from '@/lib/tagData';
@@ -32,7 +32,7 @@ const organizeTagsByCategory = (): Category[] => {
     'Otros': [] // Other
   };
 
-  Object.entries(tagData).forEach(([_, tag]) => {
+  Object.entries(tagData).forEach(([, tag]) => {
     switch(tag.category) {
       case 'Main root':
         categories['Raíz Principal'].push(tag);
@@ -82,7 +82,7 @@ const organizeTagsByCategory = (): Category[] => {
   });
 
   return Object.entries(categories)
-    .filter(([_, tags]) => tags.length > 0)
+    .filter(([, tags]) => tags.length > 0)
     .map(([title, tags]) => ({
       title,
       tags
