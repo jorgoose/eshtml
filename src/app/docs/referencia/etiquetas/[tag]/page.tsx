@@ -17,7 +17,7 @@ export function generateStaticParams() {
 export default async function TagPage({
   params,
 }: {
-  params: { tag: string }
+  params: Promise<{ tag: string }>;
 }) {
   const tagName = (await params).tag;
   // Update tag finding logic to use accent-free comparison
