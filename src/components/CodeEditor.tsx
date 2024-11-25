@@ -10,10 +10,9 @@ interface CodeEditorProps {
   code: string;
   onChange?: (value: string) => void;
   readOnly?: boolean;
-  title?: string;
 }
 
-export default function CodeEditor({ code, onChange, readOnly = false, title }: CodeEditorProps) {
+export default function CodeEditor({ code, onChange, readOnly = false }: CodeEditorProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const preRef = useRef<HTMLPreElement>(null);
 
@@ -59,31 +58,24 @@ export default function CodeEditor({ code, onChange, readOnly = false, title }: 
   };
 
   return (
-    <div className="flex flex-col">
-      {title && (
-        <div className="bg-gray-800 px-4 py-2 text-sm text-gray-300 font-medium rounded-t">
-          {title}
-        </div>
-      )}
-      <div className="relative flex-1">
-        <pre
-          ref={preRef}
-          className="absolute w-full h-full overflow-hidden m-0 bg-transparent p-4 font-mono text-sm leading-6"
-          aria-hidden="true"
+    <div className="relative flex-1">
+      <pre
+        ref={preRef}
+        className="absolute w-full h-full overflow-hidden m-0 bg-transparent p-4 font-mono text-sm leading-6"
+        aria-hidden="true"
+      />
+      {!readOnly ? (
+        <textarea
+          ref={textareaRef}
+          value={code}
+          onChange={(e) => onChange?.(e.target.value)}
+          onScroll={handleScroll}
+          onKeyDown={handleKeyDown}
+          className="absolute w-full h-full bg-transparent text-transparent caret-white p-4 font-mono text-sm focus:outline-none resize-none leading-6 
+          scrollbar-thin scrollbar-track-gray-900 scrollbar-thumb-gray-700 hover:scrollbar-thumb-gray-600"
+          spellCheck="false"
         />
-        {!readOnly ? (
-          <textarea
-            ref={textareaRef}
-            value={code}
-            onChange={(e) => onChange?.(e.target.value)}
-            onScroll={handleScroll}
-            onKeyDown={handleKeyDown}
-            className="absolute w-full h-full bg-transparent text-transparent caret-white p-4 font-mono text-sm focus:outline-none resize-none leading-6 
-            scrollbar-thin scrollbar-track-gray-900 scrollbar-thumb-gray-700 hover:scrollbar-thumb-gray-600"
-            spellCheck="false"
-          />
-        ) : null}
-      </div>
+      ) : null}
     </div>
   );
 }
