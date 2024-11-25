@@ -6,10 +6,11 @@ import { DocsSidebar } from '@/components/DocsSidebar';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import CodeEditor from '@/components/CodeEditor';
+import { removeAccents } from '@/lib/utils';
 
 export function generateStaticParams() {
   return Object.keys(tagData).map((tagName) => ({
-    tag: tagName,
+    tag: removeAccents(tagName),
   }));
 }
 
@@ -19,9 +20,12 @@ export default async function TagPage({
   params: { tag: string }
 }) {
   const tagName = (await params).tag;
-  const tag = tagData[tagName];
+  // Update tag finding logic to use accent-free comparison
+  const tag = Object.values(tagData).find(
+    (tag) => removeAccents(tag.eshtml.toLowerCase()) === tagName.toLowerCase()
+  );
   
-  if (!tagName) {
+  if (!tag) {
     notFound();
   }
 
@@ -86,21 +90,25 @@ export default async function TagPage({
                 )}
 
                 {tag.example && (
-                  <>
+                    <>
                     <h2 className="text-2xl font-semibold text-white mb-6">Ejemplo</h2>
                     <div className="grid grid-cols-2 gap-4 not-prose">
+                      <div>
+                      <div className="text-sm text-gray-400 mb-2">EsHTML</div>
                       <CodeEditor
                         code={tag.example.eshtml}
                         readOnly
-                        title="EsHTML"
                       />
+                      </div>
+                      <div>
+                      <div className="text-sm text-gray-400 mb-2">HTML</div>
                       <CodeEditor
                         code={tag.example.html}
                         readOnly
-                        title="HTML"
                       />
+                      </div>
                     </div>
-                  </>
+                    </>
                 )}
               </article>
             </div>
