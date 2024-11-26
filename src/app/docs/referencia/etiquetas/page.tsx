@@ -1,10 +1,12 @@
 // src/app/docs/referencia/etiquetas/page.tsx
+'use client';
 import Link from 'next/link';
 import { ChevronRight, Search } from 'lucide-react';
 import { Nav } from '@/components/Nav';
 import { DocsSidebar } from '@/components/DocsSidebar';
 import { tagData, TagDefinition } from '@/lib/tagData';
 import { removeAccents } from '@/lib/utils';
+import { useState } from 'react';
 
 // Update type definition
 type Category = {
@@ -91,6 +93,20 @@ const organizeTagsByCategory = (): Category[] => {
 
 export default function EtiquetasPage() {
   const tagCategories = organizeTagsByCategory();
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Filter categories and their tags based on search
+  const filteredCategories = tagCategories.map(category => ({
+    ...category,
+    tags: category.tags.filter(tag => {
+      const searchTerms = searchQuery.toLowerCase();
+      return (
+        tag.eshtml.toLowerCase().includes(searchTerms) ||
+        tag.html.toLowerCase().includes(searchTerms) ||
+        tag.description.toLowerCase().includes(searchTerms)
+      );
+    })
+  })).filter(category => category.tags.length > 0);
 
   return (
     <div className="min-h-screen bg-[#111827]">
@@ -122,17 +138,19 @@ export default function EtiquetasPage() {
                 </div>
 
                 <div className="flex justify-between items-center mb-8">
-                  <div className="relative">
+                  <div className="relative w-full max-w-md">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                     <input 
                       type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
                       placeholder="Buscar etiquetas..."
-                      className="pl-10 pr-4 py-2 bg-gray-900/50 border border-gray-800/50 rounded-lg text-gray-300 placeholder-gray-500 focus:outline-none focus:border-orange-500/50"
+                      className="w-full pl-10 pr-4 py-2 bg-gray-900/50 border border-gray-800/50 rounded-lg text-gray-300 placeholder-gray-500 focus:outline-none focus:border-orange-500/50"
                     />
                   </div>
                 </div>
 
-                {tagCategories.map((category) => (
+                {filteredCategories.map((category) => (
                   <div key={category.title} className="mb-12">
                     <h2 className="text-2xl font-semibold text-white mb-6">{category.title}</h2>
                     <div className="grid grid-cols-1 gap-4 not-prose">
