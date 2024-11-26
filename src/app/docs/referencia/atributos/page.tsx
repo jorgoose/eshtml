@@ -1,4 +1,6 @@
 // src/app/docs/referencia/atributos/page.tsx
+'use client';
+import { useState } from 'react';
 import Link from 'next/link';
 import { ChevronRight, Search } from 'lucide-react';
 import { Nav } from '@/components/Nav';
@@ -6,7 +8,22 @@ import { DocsSidebar } from '@/components/DocsSidebar';
 import { attributeData } from '@/lib/attributeData';
 
 export default function AtributosPage() {
-  const attributes = Object.entries(attributeData).sort(([a], [b]) => a.localeCompare(b));
+  const [searchQuery, setSearchQuery] = useState('');
+  
+  // Filter and sort attributes based on search query
+  const filteredAttributes = Object.entries(attributeData)
+    .filter(([, attr]) => {
+      const searchTerms = searchQuery.toLowerCase();
+      return (
+        attr.eshtml.toLowerCase().includes(searchTerms) ||
+        attr.html.toLowerCase().includes(searchTerms) ||
+        attr.description.toLowerCase().includes(searchTerms) ||
+        attr.elements?.some(element => 
+          element.toLowerCase().includes(searchTerms)
+        )
+      );
+    })
+    .sort(([a], [b]) => a.localeCompare(b));
 
   return (
     <div className="min-h-screen bg-[#111827]">
@@ -14,12 +31,9 @@ export default function AtributosPage() {
       <div className="flex pt-16">
         <DocsSidebar activePath="/docs/referencia/atributos" />
 
-        {/* Remove fixed margin on mobile */}
         <div className="flex-1 md:ml-64">
           <div className="max-w-[1200px] mx-auto">
-            {/* Responsive padding */}
             <div className="px-4 md:px-16 py-8 md:py-12 mt-12 md:mt-0">
-              {/* Scrollable breadcrumbs */}
               <div className="flex items-center text-sm text-gray-400 mb-8 overflow-x-auto">
                 <Link href="/docs" className="hover:text-white whitespace-nowrap">Docs</Link>
                 <ChevronRight className="w-4 h-4 mx-2 flex-shrink-0" />
@@ -39,21 +53,23 @@ export default function AtributosPage() {
                   </p>
                 </div>
 
-                {/* Full width search on mobile */}
+                {/* Search input with handler */}
                 <div className="flex justify-between items-center mb-8">
                   <div className="relative w-full">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                     <input 
                       type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
                       placeholder="Buscar atributos..."
                       className="w-full pl-10 pr-4 py-2 bg-gray-900/50 border border-gray-800/50 rounded-lg text-gray-300 placeholder-gray-500 focus:outline-none focus:border-orange-500/50"
                     />
                   </div>
                 </div>
 
-                {/* Adjust card spacing for mobile */}
+                {/* Display filtered attributes */}
                 <div className="grid grid-cols-1 gap-3 md:gap-4 not-prose">
-                  {attributes.map(([key, attr]) => (
+                  {filteredAttributes.map(([key, attr]) => (
                     <div
                       key={key}
                       className="block bg-gray-900/50 rounded-lg border border-gray-800/50 hover:border-orange-500/50 transition-colors p-3 md:p-4"
