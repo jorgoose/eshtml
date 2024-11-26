@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 // GitHub and HTML icon from react-icons
-import { AiOutlineHtml5, AiOutlineGithub } from "react-icons/ai";
+import { AiOutlineHtml5 } from "react-icons/ai";
 import { Nav } from "@/components/Nav";
 import CodeEditor from '@/components/CodeEditor';
 import LineNumbers from '@/components/LineNumbers';
