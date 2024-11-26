@@ -111,8 +111,17 @@ export default function EtiquetasPage() {
               </div>
 
               <article className="prose prose-invert max-w-4xl">
+                <div className="mb-12">
+                  <h1 className="text-4xl font-bold text-white mb-6">Referencia de elementos EsHTML</h1>
+                  <p className="text-xl text-gray-300 leading-relaxed mb-4">
+                    Esta página enumera todos los elementos de EsHTML, que se crean usando etiquetas, junto con sus equivalentes en HTML estándar en inglés.
+                  </p>
+                  <p className="text-xl text-gray-300 leading-relaxed mb-12">
+                    Están agrupados por función para ayudarte a encontrar fácilmente lo que buscas.
+                  </p>
+                </div>
+
                 <div className="flex justify-between items-center mb-8">
-                  <h1 className="text-4xl font-bold text-white mb-0">Etiquetas</h1>
                   <div className="relative">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                     <input 
