@@ -42,9 +42,10 @@ const content = {
   }
 };
 
+// Update CodeExampleDocs component to be responsive
 function CodeExampleDocs({ eshtml, html }: { eshtml: string; html: string }) {
   return (
-    <div className="grid grid-cols-2 gap-4 not-prose">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 not-prose">
       {/* EsHTML */}
       <div className="rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
         <div className="bg-gray-950/80 border-b border-gray-800">
@@ -52,7 +53,7 @@ function CodeExampleDocs({ eshtml, html }: { eshtml: string; html: string }) {
             <span className="text-gray-300 text-sm font-medium">entrada.eshtml</span>
           </div>
         </div>
-        <div className="bg-gray-900/50 flex">
+        <div className="bg-gray-900/50 flex overflow-x-auto">
           <LineNumbers count={eshtml.split('\n').length} />
           <CodeEditor code={eshtml} readOnly={true} />
         </div>
@@ -65,7 +66,7 @@ function CodeExampleDocs({ eshtml, html }: { eshtml: string; html: string }) {
             <span className="text-gray-300 text-sm font-medium">salida.html</span>
           </div>
         </div>
-        <div className="bg-gray-900/50 flex">
+        <div className="bg-gray-900/50 flex overflow-x-auto">
           <LineNumbers count={html.split('\n').length} />
           <CodeEditor code={html} readOnly={true} />
         </div>
@@ -78,35 +79,38 @@ export default function DocsPage() {
   return (
     <div className="min-h-screen bg-[#111827]">
       <Nav />
-      <div className="flex pt-16"> {/* Add pt-16 to account for navbar height */}
+      <div className="flex pt-16">
         <DocsSidebar activePath="/docs/introduccion/que-es-eshtml" />
 
-        {/* Main content area */}
-        <div className="flex-1 ml-64">
-          <div className="max-w-[1200px] mx-auto"> {/* Center content with max width */}
-            <div className="px-16 py-12"> {/* Consistent padding */}
-              {/* Breadcrumb */}
-              <div className="flex items-center text-sm text-gray-400 mb-8">
-                <Link href="/docs" className="hover:text-white">
+        {/* Main content area - Remove fixed margin on mobile */}
+        <div className="flex-1 md:ml-64">
+          <div className="max-w-[1200px] mx-auto">
+            {/* Responsive padding */}
+            <div className="px-4 md:px-16 py-8 md:py-12 mt-12 md:mt-0">
+              {/* Scrollable breadcrumbs on mobile */}
+              <div className="flex items-center text-sm text-gray-400 mb-8 overflow-x-auto">
+                <Link href="/docs" className="hover:text-white whitespace-nowrap">
                   Docs
                 </Link>
-                <ChevronRight className="w-4 h-4 mx-2" />
-                <span className="text-gray-400">Introducción</span>
-                <ChevronRight className="w-4 h-4 mx-2" />
-                <span className="text-white">¿Qué es EsHTML?</span>
+                <ChevronRight className="w-4 h-4 mx-2 flex-shrink-0" />
+                <span className="text-gray-400 whitespace-nowrap">Introducción</span>
+                <ChevronRight className="w-4 h-4 mx-2 flex-shrink-0" />
+                <span className="text-white whitespace-nowrap">¿Qué es EsHTML?</span>
               </div>
 
-              {/* Content */}
-              <article className="prose prose-invert max-w-4xl"> {/* Constrain content width */}
-                <h1 className="text-4xl font-bold text-white mb-4">{content.title}</h1>
-                <p className="text-xl text-gray-300 leading-relaxed">{content.description}</p>
+              {/* Content with responsive spacing */}
+              <article className="prose prose-invert max-w-4xl">
+                <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">{content.title}</h1>
+                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">{content.description}</p>
 
-                <h2 className="text-2xl font-semibold text-white mt-16 mb-6">Ejemplo básico</h2>
+                <h2 className="text-xl md:text-2xl font-semibold text-white mt-12 md:mt-16 mb-4 md:mb-6">
+                  Ejemplo básico
+                </h2>
                 <CodeExampleDocs eshtml={content.example.eshtml} html={content.example.html} />
               </article>
 
-              {/* Page navigation */}
-              <div className="mt-16 max-w-3xl border-t border-gray-800/50 pt-8">
+              {/* Page navigation with responsive spacing */}
+              <div className="mt-12 md:mt-16 max-w-3xl border-t border-gray-800/50 pt-6 md:pt-8">
                 <div></div>
                 <Link 
                   href="/docs/introduccion/por-que-eshtml"
