@@ -18,11 +18,9 @@ const content = {
   },
   solution: {
     title: 'Nuestra Solución',
-    description: `EsHTML permite que los estudiantes:
-
-    • Aprendan conceptos web usando palabras que ya conocen
-    • Se concentren en entender la estructura y lógica de HTML
-    • Hagan una transición natural al HTML estándar cuando estén listos`
+    description: `Aprendan conceptos web usando palabras que ya conocen
+    Se concentren en entender la estructura y lógica de HTML
+    Hagan una transición natural al HTML estándar cuando estén listos`
   },
   benefits: [
     {
