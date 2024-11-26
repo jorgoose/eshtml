@@ -1,69 +1,11 @@
 // src/app/page.tsx
 import Link from "next/link";
-import {
-  Search, // For docs search
-  Moon, // For dark mode toggle
-  Menu, // For mobile menu
-} from "lucide-react";
 
 // GitHub and HTML icon from react-icons
 import { AiOutlineHtml5, AiOutlineGithub } from "react-icons/ai";
-import CodeEditor from '../components/CodeEditor';
-import LineNumbers from '../components/LineNumbers';
-
-function Nav() {
-  return (
-    <nav className="fixed w-full bg-gray-900/80 backdrop-blur-sm border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo with HTML5 icon */}
-          <Link href="/" className="flex items-center space-x-1">
-          <AiOutlineHtml5 className="w-8 h-8 text-orange-500" />
-            <span className="text-2xl font-bold">
-              <span className="text-white">Es</span>
-              <span className="text-orange-500">HTML</span>
-            </span>
-          </Link>
-
-          {/* Rest of navbar remains the same */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Link
-              href="/docs/introduccion"
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm flex items-center gap-2"
-            >
-              <Search className="w-4 h-4" />
-              Docs
-            </Link>
-            <a
-              href="https://github.com/jorgoose/eshtml"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm flex items-center gap-2"
-            >
-              <AiOutlineGithub className="w-4 h-4" />
-              GitHub
-            </a>
-            <button
-              className="text-gray-300 hover:text-white p-2 rounded-md"
-              aria-label="Toggle dark mode"
-            >
-              <Moon className="w-5 h-5" />
-            </button>
-          </div>
-
-          <div className="md:hidden">
-            <button
-              className="text-gray-300 hover:text-white p-2 rounded-md"
-              aria-label="Open menu"
-            >
-              <Menu className="w-6 h-6" />
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
-  );
-}
+import { Nav } from "@/components/Nav";
+import CodeEditor from '@/components/CodeEditor';
+import LineNumbers from '@/components/LineNumbers';
 
 // Create a new component for the EsHTML logo
 function EsHtmlLogo() {
