@@ -287,5 +287,139 @@ export const attributeData: Record<string, AttributeDefinition> = {
       eshtml: '<entrada tipo="número" paso="0.5">',
       html: '<input type="number" step="0.5">'
     }
+  },
+
+  novalidar: {
+    eshtml: 'novalidar',
+    html: 'novalidate',
+    description: 'Indica que el formulario no debe validarse al enviarse.',
+    elements: ['formulario'],
+    example: {
+      eshtml: '<formulario novalidar>',
+      html: '<form novalidate>'
+    }
+  },
+
+  idioma: {
+    eshtml: 'idioma',
+    html: 'lang',
+    description: 'Define el idioma usado en el elemento.',
+    elements: ['Global'],
+    example: {
+      eshtml: '<html idioma="es">',
+      html: '<html lang="es">'
+    }
+  },
+
+  medios: {
+    eshtml: 'medios',
+    html: 'media',
+    description: 'Especifica una pista del medio para el cual el recurso enlazado fue diseñado.',
+    elements: ['enlace', 'fuente', 'estilo'],
+    example: {
+      eshtml: '<enlace medios="(max-width: 600px)" rel="stylesheet" href="mobile.css">',
+      html: '<link media="(max-width: 600px)" rel="stylesheet" href="mobile.css">'
+    }
+  },
+
+  relación: {
+    eshtml: 'relación',
+    html: 'rel',
+    description: 'Especifica la relación del objeto destino con el objeto enlace.',
+    elements: ['a', 'área', 'enlace'],
+    example: {
+      eshtml: '<enlace relación="stylesheet" href="styles.css">',
+      html: '<link rel="stylesheet" href="styles.css">'
+    }
+  },
+
+  cruzado: {
+    eshtml: 'cruzado',
+    html: 'crossorigin',
+    description: 'Especifica cómo el elemento maneja las peticiones de origen cruzado.',
+    elements: ['audio', 'img', 'enlace', 'script', 'video'],
+    example: {
+      eshtml: '<img fte="imagen.jpg" cruzado="anonymous">',
+      html: '<img src="image.jpg" crossorigin="anonymous">'
+    }
+  },
+
+  integridad: {
+    eshtml: 'integridad',
+    html: 'integrity',
+    description: 'Especifica un valor de Integridad de Subrecursos que permite a los navegadores verificar lo que obtienen.',
+    elements: ['enlace', 'script'],
+    example: {
+      eshtml: '<script integridad="sha384-..." fte="script.js">',
+      html: '<script integrity="sha384-..." src="script.js">'
+    }
+  },
+
+  cargando: {
+    eshtml: 'cargando',
+    html: 'loading',
+    description: 'Indica si el elemento debe cargarse de forma diferida (loading="lazy") o inmediatamente (loading="eager").',
+    elements: ['img', 'marcol'],
+    values: ['perezoso', 'ansioso'],
+    example: {
+      eshtml: '<img fte="imagen.jpg" cargando="perezoso">',
+      html: '<img src="image.jpg" loading="lazy">'
+    }
+  },
+
+  controles: {
+    eshtml: 'controles',
+    html: 'controls',
+    description: 'Indica si el navegador debe mostrar controles de reproducción al usuario.',
+    elements: ['audio', 'video'],
+    example: {
+      eshtml: '<video fte="video.mp4" controles>',
+      html: '<video src="video.mp4" controls>'
+    }
+  },
+
+  bucle: {
+    eshtml: 'bucle',
+    html: 'loop',
+    description: 'Indica si el medio debe comenzar a reproducirse desde el inicio cuando termine.',
+    elements: ['audio', 'video'],
+    example: {
+      eshtml: '<audio fte="musica.mp3" bucle>',
+      html: '<audio src="music.mp3" loop>'
+    }
+  },
+
+  silenciado: {
+    eshtml: 'silenciado',
+    html: 'muted',
+    description: 'Indica si el audio estará inicialmente silenciado al cargar la página.',
+    elements: ['audio', 'video'],
+    example: {
+      eshtml: '<video fte="video.mp4" silenciado>',
+      html: '<video src="video.mp4" muted>'
+    }
+  },
+
+  cartel: {
+    eshtml: 'cartel',
+    html: 'poster',
+    description: 'Una URL que indica un cuadro de presentación para mostrar hasta que el usuario reproduzca o busque.',
+    elements: ['video'],
+    example: {
+      eshtml: '<video fte="video.mp4" cartel="preview.jpg">',
+      html: '<video src="video.mp4" poster="preview.jpg">'
+    }
+  },
+
+  precargar: {
+    eshtml: 'precargar',
+    html: 'preload',
+    description: 'Indica si todo el recurso, partes de él o nada debe ser precargado.',
+    elements: ['audio', 'video'],
+    values: ['ninguno', 'metadatos', 'auto'],
+    example: {
+      eshtml: '<video fte="video.mp4" precargar="ninguno">',
+      html: '<video src="video.mp4" preload="none">'
+    }
   }
 };
