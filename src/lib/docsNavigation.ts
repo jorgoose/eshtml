@@ -11,9 +11,9 @@ export const docsNavigation = {
   referencia: {
     title: 'Referencia',
     items: [
+      { title: 'Sintaxis', href: '/docs/referencia/sintaxis' },
       { title: 'Etiquetas', href: '/docs/referencia/etiquetas' },
       { title: 'Atributos', href: '/docs/referencia/atributos' },
-      { title: 'Sintaxis', href: '/docs/referencia/sintaxis' },
     ]
   },
   herramientas: {
