@@ -1,52 +1,88 @@
 // src/app/tutorial/introduccion/elementos-y-etiquetas/page.tsx
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Nav } from '@/components/Nav';
 import CodeEditor from '@/components/CodeEditor';
 import LineNumbers from '@/components/LineNumbers';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { EsHTMLTranspiler } from 'html-es';
+
+function CodeWithPreview({ code }: { code: string }) {
+  const transpiler = useMemo(() => new EsHTMLTranspiler(), []);
+  const html = useMemo(() => transpiler.transpile(code), [code]);
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      {/* EsHTML Section */}
+      <div className="rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
+        <div className="bg-gray-950/80 border-b border-gray-800 px-4 py-3">
+          <span className="text-gray-300 text-sm font-medium">EsHTML</span>
+        </div>
+        <div className="bg-gray-900/50 flex">
+          <LineNumbers count={code.split('\n').length} />
+          <CodeEditor code={code} readOnly={true} />
+        </div>
+      </div>
+
+      {/* HTML Section */}
+      <div className="rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
+        <div className="bg-gray-950/80 border-b border-gray-800 px-4 py-3">
+          <span className="text-gray-300 text-sm font-medium">HTML</span>
+        </div>
+        <div className="bg-gray-900/50 flex">
+          <LineNumbers count={html.split('\n').length} />
+          <CodeEditor code={html} readOnly={true} />
+        </div>
+      </div>
+
+      {/* Preview Section */}
+      <div className="rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
+        <div className="bg-gray-950/80 border-b border-gray-800 px-4 py-3">
+          <div className="flex items-center space-x-2">
+            <div className="flex space-x-1.5">
+              <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+            </div>
+            <div className="ml-4 bg-gray-900/80 rounded-md px-3 py-1.5">
+              <span className="text-gray-400 text-xs">Vista Previa</span>
+            </div>
+          </div>
+        </div>
+        <div className="bg-white h-[200px] overflow-auto shadow-inner">
+          <iframe
+            srcDoc={html}
+            title="Preview"
+            className="w-full h-full"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function ElementosEtiquetas() {
   const [basicExample] = useState({
-    eshtml: `<p>Este es un párrafo de texto.</p>`,
-    html: `<p>Este es un párrafo de texto.</p>`
-  });
-
-  const [examples] = useState({
-    eshtml: `<ld>
-  <el>Primer elemento</el>
-  <el>Segundo elemento</el>
-</ld>
-
-<lo>
-  <el>Primer elemento</el>
-  <el>Segundo elemento</el>
-</lo>`,
-    html: `<ul>
-  <li>Primer elemento</li>
-  <li>Segundo elemento</li>
-</ul>
-
-<ol>
-  <li>Primer elemento</li>
-  <li>Segundo elemento</li>
-</ol>`
+    eshtml: `<e1>Este es un título grande</e1>
+<p>Este es un párrafo de texto.</p>`,
+    html: `<h1>Este es un título grande</h1>
+<p>Este es un párrafo de texto.</p>`
   });
 
   return (
     <div className="min-h-screen bg-[#111827]">
       <Nav />
       <div className="bg-orange-500/10 border-b border-orange-500/20">
-        <div className="max-w-[800px] mx-auto px-6 py-2 text-sm text-orange-300">
+        <div className="max-w-[1200px] mx-auto px-4 py-2 text-sm text-orange-300">
           Lección 5 de 24
         </div>
       </div>
       
       <div className="flex pt-16">
         <div className="flex-1">
-          <div className="max-w-[800px] mx-auto px-6 md:px-8 py-12 md:py-16">
+          <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-16">
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Elementos y Etiquetas
             </h1>
@@ -69,113 +105,30 @@ export default function ElementosEtiquetas() {
               </div>
 
               <h2 className="text-2xl font-bold text-white mt-8 mb-4">Un Ejemplo Simple</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
-                  <div className="bg-gray-950/80 border-b border-gray-800 px-4 py-3">
-                    <span className="text-gray-300 text-sm font-medium">EsHTML</span>
-                  </div>
-                  <div className="bg-gray-900/50 flex">
-                    <LineNumbers count={basicExample.eshtml.split('\n').length} />
-                    <CodeEditor code={basicExample.eshtml} readOnly={true} />
-                  </div>
-                </div>
+              <CodeWithPreview 
+                code={basicExample.eshtml}
+                title="Elementos básicos en EsHTML"
+              />
 
-                <div className="rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
-                  <div className="bg-gray-950/80 border-b border-gray-800 px-4 py-3">
-                    <span className="text-gray-300 text-sm font-medium">HTML</span>
-                  </div>
-                  <div className="bg-gray-900/50 flex">
-                    <LineNumbers count={basicExample.html.split('\n').length} />
-                    <CodeEditor code={basicExample.html} readOnly={true} />
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
                 <div className="bg-gray-800/50 p-6 rounded-lg">
                   <h3 className="text-lg font-semibold text-white mb-2">Etiqueta de Apertura</h3>
                   <p className="text-gray-300">
-                    <code className="text-orange-400">&lt;p&gt;</code> dice &quot;aquí empieza un párrafo&quot;
+                    <code className="text-orange-400">&lt;e1&gt;</code> indica &quot;aquí empieza un título principal&quot;
+                  </p>
+                </div>
+
+                <div className="bg-gray-800/50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-white mb-2">Contenido</h3>
+                  <p className="text-gray-300">
+                    <code className="text-orange-400">Este es un título grande</code> es el texto que se mostrará en la página
                   </p>
                 </div>
 
                 <div className="bg-gray-800/50 p-6 rounded-lg">
                   <h3 className="text-lg font-semibold text-white mb-2">Etiqueta de Cierre</h3>
                   <p className="text-gray-300">
-                    <code className="text-orange-400">&lt;/p&gt;</code> dice &quot;aquí termina el párrafo&quot;
-                  </p>
-                </div>
-              </div>
-
-              <h2 className="text-2xl font-bold text-white mt-8 mb-4">Elementos Comunes</h2>
-              <p className="text-lg text-gray-300 mb-4">
-                Aquí hay algunos elementos que usarás frecuentemente:
-              </p>
-
-              <div className="rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
-                <div className="bg-gray-950/80 border-b border-gray-800 px-4 py-3">
-                  <span className="text-gray-300 text-sm font-medium">Elementos Básicos</span>
-                </div>
-                <div className="bg-gray-900/50 flex">
-                  <LineNumbers count={examples.eshtml.split('\n').length} />
-                  <CodeEditor code={examples.eshtml} readOnly={true} />
-                </div>
-              </div>
-
-              <div className="space-y-4 mt-8">
-                <div className="bg-gray-800/50 p-4 rounded-lg">
-                  <p className="text-gray-300">
-                    • Todo lo que va entre <code className="text-orange-400">&lt;e1&gt;</code> y <code className="text-orange-400">&lt;/e1&gt;</code> será un título grande
-                  </p>
-                </div>
-                <div className="bg-gray-800/50 p-4 rounded-lg">
-                  <p className="text-gray-300">
-                    • Todo lo que va entre <code className="text-orange-400">&lt;p&gt;</code> y <code className="text-orange-400">&lt;/p&gt;</code> será un párrafo de texto
-                  </p>
-                </div>
-                <div className="bg-gray-800/50 p-4 rounded-lg">
-                  <p className="text-gray-300">
-                    • Una <code className="text-orange-400">&lt;lista&gt;</code> puede contener varios <code className="text-orange-400">&lt;elemento&gt;</code>
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
-                  <div className="bg-gray-950/80 border-b border-gray-800 px-4 py-3">
-                    <span className="text-gray-300 text-sm font-medium">EsHTML</span>
-                  </div>
-                  <div className="bg-gray-900/50 flex">
-                    <LineNumbers count={examples.eshtml.split('\n').length} />
-                    <CodeEditor code={examples.eshtml} readOnly={true} />
-                  </div>
-                </div>
-
-                <div className="rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
-                  <div className="bg-gray-950/80 border-b border-gray-800 px-4 py-3">
-                    <span className="text-gray-300 text-sm font-medium">HTML</span>
-                  </div>
-                  <div className="bg-gray-900/50 flex">
-                    <LineNumbers count={examples.html.split('\n').length} />
-                    <CodeEditor code={examples.html} readOnly={true} />
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-4 mt-8">
-                <div className="bg-gray-800/50 p-4 rounded-lg">
-                  <p className="text-gray-300">
-                    • <code className="text-orange-400">&lt;lista-desordenada&gt;</code> se convierte en <code className="text-blue-400">&lt;ul&gt;</code> (lista sin números)
-                  </p>
-                </div>
-                <div className="bg-gray-800/50 p-4 rounded-lg">
-                  <p className="text-gray-300">
-                    • <code className="text-orange-400">&lt;lista-ordenada&gt;</code> se convierte en <code className="text-blue-400">&lt;ol&gt;</code> (lista numerada)
-                  </p>
-                </div>
-                <div className="bg-gray-800/50 p-4 rounded-lg">
-                  <p className="text-gray-300">
-                    • <code className="text-orange-400">&lt;elemento&gt;</code> se convierte en <code className="text-blue-400">&lt;li&gt;</code> (elemento de lista)
+                    <code className="text-orange-400">&lt;/e1&gt;</code> indica &quot;aquí termina el título principal&quot;
                   </p>
                 </div>
               </div>
