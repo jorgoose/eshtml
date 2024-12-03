@@ -105,9 +105,9 @@ export default function ElementosEtiquetas() {
               </div>
 
               <h2 className="text-2xl font-bold text-white mt-8 mb-4">Un Ejemplo Simple</h2>
-              <CodeWithPreview 
+              <p className="text-lg text-gray-300 mb-4">Elementos básicos en EsHTML:</p>
+              <CodeWithPreview
                 code={basicExample.eshtml}
-                title="Elementos básicos en EsHTML"
               />
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
