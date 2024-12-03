@@ -1,4 +1,5 @@
 // components/CodeEditor.tsx
+
 'use client';
 
 import Prism from 'prismjs';
@@ -30,8 +31,7 @@ export default function CodeEditor({ code, onChange, readOnly = false }: CodeEdi
     highlight();
   }, [code]);
 
-  const handleScroll = (e: React.UIEvent<HTMLTextAreaElement>) => {
-    void e; // Acknowledge parameter usage
+  const handleScroll = () => {
     if (preRef.current && textareaRef.current) {
       preRef.current.scrollTop = textareaRef.current.scrollTop;
       preRef.current.scrollLeft = textareaRef.current.scrollLeft;
@@ -41,7 +41,7 @@ export default function CodeEditor({ code, onChange, readOnly = false }: CodeEdi
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Tab') {
       e.preventDefault();
-      
+
       const textarea = e.currentTarget;
       const start = textarea.selectionStart;
       const end = textarea.selectionEnd;
@@ -58,10 +58,15 @@ export default function CodeEditor({ code, onChange, readOnly = false }: CodeEdi
   };
 
   return (
-    <div className="relative flex-1">
+    <div className="relative flex-1 overflow-auto">
       <pre
         ref={preRef}
-        className="absolute w-full h-full overflow-hidden m-0 bg-transparent p-4 font-mono text-sm leading-6"
+        className="absolute w-full h-full m-0 bg-transparent p-4 font-mono text-sm leading-6 whitespace-pre
+        overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-700/50 hover:scrollbar-thumb-gray-600/50
+        [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar]:h-2 
+        [&::-webkit-scrollbar-track]:bg-transparent
+        [&::-webkit-scrollbar-thumb]:bg-gray-700/50 [&::-webkit-scrollbar-thumb]:rounded-full
+        [&::-webkit-scrollbar-corner]:bg-transparent"
         aria-hidden="true"
       />
       {!readOnly ? (
@@ -71,8 +76,12 @@ export default function CodeEditor({ code, onChange, readOnly = false }: CodeEdi
           onChange={(e) => onChange?.(e.target.value)}
           onScroll={handleScroll}
           onKeyDown={handleKeyDown}
-          className="absolute w-full h-full bg-transparent text-transparent caret-white p-4 font-mono text-sm focus:outline-none resize-none leading-6 
-          scrollbar-thin scrollbar-track-gray-900 scrollbar-thumb-gray-700 hover:scrollbar-thumb-gray-600"
+          className="absolute w-full h-full bg-transparent text-transparent caret-white p-4 font-mono text-sm focus:outline-none resize-none leading-6 whitespace-pre
+          overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-700/50 hover:scrollbar-thumb-gray-600/50
+          [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar]:h-2 
+          [&::-webkit-scrollbar-track]:bg-transparent
+          [&::-webkit-scrollbar-thumb]:bg-gray-700/50 [&::-webkit-scrollbar-thumb]:rounded-full
+          [&::-webkit-scrollbar-corner]:bg-transparent"
           spellCheck="false"
         />
       ) : null}
