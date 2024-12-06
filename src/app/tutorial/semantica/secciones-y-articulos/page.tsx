@@ -190,7 +190,7 @@ export default function SeccionesArticulos() {
 
               <div className="mt-12 flex justify-between">
                 <Link
-                  href="/tutorial/formatos/citas-codigo"
+                  href="/tutorial/formatos/citas-y-codigo"
                   className="inline-flex items-center px-6 py-3 text-gray-300 hover:text-white"
                 >
                   <ChevronLeft className="mr-2 w-5 h-5" />

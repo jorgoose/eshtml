@@ -1,4 +1,4 @@
-// src/app/tutorial/formatos/citas-codigo/page.tsx
+// src/app/tutorial/formatos/citas-y-codigo/page.tsx
 'use client';
 
 import { useState, useMemo } from 'react';

@@ -32,7 +32,7 @@ const tutorialContent = {
     lessons: [
       { id: "3-1", title: "Énfasis y Estilos de Texto", href: "/tutorial/formatos/enfasis-estilos", description: "Aplica negritas, cursivas y más" },
       { id: "3-2", title: "Listas", href: "/tutorial/formatos/listas", description: "Crea listas ordenadas y desordenadas" },
-      { id: "3-3", title: "Citas y Código", href: "/tutorial/formatos/citas-codigo", description: "Incluye citas y fragmentos de código" }
+      { id: "3-3", title: "Citas y Código", href: "/tutorial/formatos/citas-y-codigo", description: "Incluye citas y fragmentos de código" }
     ]
   },
   4: {
