@@ -14,7 +14,7 @@ const tutorialContent = {
       { id: "1-2", title: "¿Qué es EsHTML?", href: "/tutorial/introduccion/que-es-eshtml", description: "Descubre EsHTML y sus beneficios" },
       { id: "1-3", title: "Tu Primer Documento EsHTML", href: "/tutorial/introduccion/primer-documento", description: "Crea y entiende tu primer código EsHTML" },
       { id: "1-4", title: "Estructura Básica de un Documento", href: "/tutorial/introduccion/estructura-basica", description: "Desglosa la estructura esencial de una página" },
-      { id: "1-5", title: "Elementos y Etiquetas en HTML", href: "/tutorial/introduccion/elementos-etiquetas", description: "Comprende cómo funcionan las etiquetas y elementos" }
+      { id: "1-5", title: "Elementos y Etiquetas en HTML", href: "/tutorial/introduccion/elementos-y-etiquetas", description: "Comprende cómo funcionan las etiquetas y elementos" }
     ]
   },
   2: {
