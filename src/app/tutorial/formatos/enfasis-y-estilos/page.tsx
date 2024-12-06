@@ -1,4 +1,4 @@
-// src/app/tutorial/formatos/enfasis-estilos/page.tsx
+// src/app/tutorial/formatos/enfasis-y-estilos/page.tsx
 'use client';
 
 import { useState, useMemo } from 'react';
