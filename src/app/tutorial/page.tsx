@@ -40,7 +40,7 @@ const tutorialContent = {
     description: "Estructurando y dando significado al contenido",
     lessons: [
       { id: "4-1", title: "Secciones y Artículos", href: "/tutorial/semantica/secciones-y-articulos", description: "Divide tu contenido de forma lógica" },
-      { id: "4-2", title: "Encapsulando Contenido", href: "/tutorial/semantica/encapsular", description: "Usa divs y spans eficazmente" },
+      { id: "4-2", title: "Encapsulando Contenido", href: "/tutorial/semantica/encapsulando-contenido", description: "Usa divs y spans eficazmente" },
       { id: "4-3", title: "Elementos Semánticos", href: "/tutorial/semantica/elementos-semanticos", description: "Mejora la accesibilidad y SEO" }
     ]
   },
