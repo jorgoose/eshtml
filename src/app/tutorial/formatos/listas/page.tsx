@@ -210,7 +210,7 @@ export default function Listas() {
 
                             <div className="mt-12 flex justify-between">
                                 <Link
-                                    href="/tutorial/formatos/enfasis-estilos"
+                                    href="/tutorial/formatos/enfasis-y-estilos"
                                     className="inline-flex items-center px-6 py-3 text-gray-300 hover:text-white"
                                 >
                                     <ChevronLeft className="mr-2 w-5 h-5" />
