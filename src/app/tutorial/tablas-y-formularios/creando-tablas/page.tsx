@@ -1,4 +1,4 @@
-// src/app/tutorial/avanzado/tablas/page.tsx
+// src/app/tutorial/tablas-y-formularios/tablas/page.tsx
 'use client';
 
 import { useState, useMemo } from 'react';
