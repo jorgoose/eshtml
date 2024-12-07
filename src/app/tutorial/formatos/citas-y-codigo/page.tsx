@@ -90,7 +90,7 @@ print(f"¡Hola {nombre}!")
   return (
     <div className="min-h-screen bg-[#111827]">
       <Nav />
-      <div className="bg-orange-500/10 border-b border-orange-500/20">
+      <div className="bg-orange-500/10 border-b border-orange-500/20 pt-16">
         <div className="max-w-[1200px] mx-auto px-4 py-2 text-sm text-orange-300">
           Lección 11 de 24
         </div>
