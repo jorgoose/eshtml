@@ -185,10 +185,10 @@ export default function RecursosAdicionales() {
                   <span>Anterior: Resumen de Conceptos Clave</span>
                 </Link>
                 <Link
-                  href="/tutorial/conclusion/recursos"
+                  href="/playground"
                   className="inline-flex items-center px-6 py-3 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 transition-colors"
                 >
-                  <span>Siguiente: Recursos Adicionales</span>
+                  <span>Ir al Playground</span>
                   <ChevronRight className="ml-2 w-5 h-5" />
                 </Link>
               </div>
