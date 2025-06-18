@@ -523,7 +523,7 @@ export const tagData: Record<string, TagDefinition> = {
       "Representa contenido autocontenido, opcionalmente con una leyenda.",
     example: {
       eshtml: `<figura>
-  <imagen src="foto.jpg" alt="Una foto" />
+<imagen src="foto.jpg" alt="Una foto" />
   <piefigura>Descripción de la foto</piefigura>
 </figura>`,
       html: `<figure>
@@ -784,6 +784,12 @@ export const tagData: Record<string, TagDefinition> = {
       html: '<video src="video.mp4" controls></video>',
     },
   },
+  lienzo: {
+    eshtml: "lienzo",
+    html: "canvas",
+    category: "Image and multimedia",
+    description: "[Auto] Lienzo: ver documentación HTML canvas.",
+  },
 
   // Embedded content
   empotrar: {
@@ -807,17 +813,6 @@ export const tagData: Record<string, TagDefinition> = {
     example: {
       eshtml: '<embed src="archivo.swf" tipo="application/x-shockwave-flash">',
       html: '<embed src="file.swf" type="application/x-shockwave-flash">',
-    },
-  },
-  fencedframe: {
-    eshtml: "fencedframe",
-    html: "fencedframe",
-    category: "Embedded content",
-    description:
-      "Representa un contexto de navegación anidado, similar a iframe pero con más características de privacidad nativas.",
-    example: {
-      eshtml: '<fencedframe src="https://ejemplo.com"></fencedframe>',
-      html: '<fencedframe src="https://example.com"></fencedframe>',
     },
   },
   marcol: {
@@ -872,17 +867,6 @@ export const tagData: Record<string, TagDefinition> = {
       html: '<object data="file.pdf" type="application/pdf"></object>',
     },
   },
-  portal: {
-    eshtml: "portal",
-    html: "portal",
-    category: "Embedded content",
-    description:
-      "Permite la incrustación de otra página HTML en la actual para habilitar una navegación más fluida a nuevas páginas.",
-    example: {
-      eshtml: '<portal src="https://ejemplo.com"></portal>',
-      html: '<portal src="https://example.com"></portal>',
-    },
-  },
   fuente: {
     eshtml: "fuente",
     html: "source",
@@ -927,6 +911,36 @@ export const tagData: Record<string, TagDefinition> = {
   <img src="small-image.jpg" alt="Image description" />
 </picture>`,
     },
+  },
+  parámetro: {
+    eshtml: "parámetro",
+    html: "param",
+    category: "Embedded content",
+    description: "[Auto] Parámetro: ver documentación HTML param.",
+  },
+  ranura: {
+    eshtml: "ranura",
+    html: "slot",
+    category: "Embedded content",
+    description: "[Auto] Ranura: ver documentación HTML slot.",
+  },
+  rubí: {
+    eshtml: "rubí",
+    html: "ruby",
+    category: "Embedded content",
+    description: "[Auto] Rubí: ver documentación HTML ruby.",
+  },
+  tr: {
+    eshtml: "tr",
+    html: "rt",
+    category: "Embedded content",
+    description: "[Auto] Ruby text: ver documentación HTML rt.",
+  },
+  pr: {
+    eshtml: "pr",
+    html: "rp",
+    category: "Embedded content",
+    description: "[Auto] Ruby parenthesis: ver documentación HTML rp.",
   },
 
   // Forms
@@ -1303,7 +1317,42 @@ export const tagData: Record<string, TagDefinition> = {
       html: "<th>Encabezado</th>",
     },
   },
-  // ... Add more table tags
+  subtítulo: {
+    eshtml: "subtítulo",
+    html: "caption",
+    category: "Table content",
+    description: "[Auto] Subtítulo: ver documentación HTML caption.",
+  },
+  columna: {
+    eshtml: "columna",
+    html: "col",
+    category: "Table content",
+    description: "[Auto] Columna: ver documentación HTML col.",
+  },
+  grupocolumnas: {
+    eshtml: "grupocolumnas",
+    html: "colgroup",
+    category: "Table content",
+    description: "[Auto] Grupo de columnas: ver documentación HTML colgroup.",
+  },
+  cuerpot: {
+    eshtml: "cuerpot",
+    html: "tbody",
+    category: "Table content",
+    description: "[Auto] Cuerpo de tabla: ver documentación HTML tbody.",
+  },
+  piet: {
+    eshtml: "piet",
+    html: "tfoot",
+    category: "Table content",
+    description: "[Auto] Pie de tabla: ver documentación HTML tfoot.",
+  },
+  encabezadot: {
+    eshtml: "encabezadot",
+    html: "thead",
+    category: "Table content",
+    description: "[Auto] Encabezado de tabla: ver documentación HTML thead.",
+  },
 
   // Interactive elements
   detalles: {
@@ -1318,7 +1367,7 @@ export const tagData: Record<string, TagDefinition> = {
   <p>Contenido detallado.</p>
 </detalles>`,
       html: `<details>
-  <summary>M��s información</summary>
+  <summary>Más información</summary>
   <p>Contenido detallado.</p>
 </details>`,
     },
@@ -1348,7 +1397,6 @@ export const tagData: Record<string, TagDefinition> = {
       html: "<summary>Detalles</summary>",
     },
   },
-  // ... Add more interactive elements
 
   // Scripting
   guion: {
@@ -1374,7 +1422,6 @@ export const tagData: Record<string, TagDefinition> = {
       html: '<script src="app.js"></script>',
     },
   },
-  // ... Add more scripting tags
 
   // Other elements
   comentario: {
@@ -1387,5 +1434,76 @@ export const tagData: Record<string, TagDefinition> = {
       html: "<!-- Comentario en HTML -->",
     },
   },
-  // ... Add more tags as needed
+  marca: {
+    eshtml: "marca",
+    html: "mark",
+    category: "Inline text semantics",
+    description: "[Auto] Marca: ver documentación HTML mark.",
+  },
+  abrv: {
+    eshtml: "abrv",
+    html: "abbr",
+    category: "Inline text semantics",
+    description: "[Auto] Abreviatura: ver documentación HTML abbr.",
+  },
+  cita: {
+    eshtml: "cita",
+    html: "cite",
+    category: "Inline text semantics",
+    description: "[Auto] Cita: ver documentación HTML cite.",
+  },
+  código: {
+    eshtml: "código",
+    html: "code",
+    category: "Inline text semantics",
+    description: "[Auto] Código: ver documentación HTML code.",
+  },
+  datos: {
+    eshtml: "datos",
+    html: "data",
+    category: "Inline text semantics",
+    description: "[Auto] Datos: ver documentación HTML data.",
+  },
+  én: {
+    eshtml: "én",
+    html: "em",
+    category: "Inline text semantics",
+    description: "[Auto] Énfasis: ver documentación HTML em.",
+  },
+  fuerte: {
+    eshtml: "fuerte",
+    html: "strong",
+    category: "Inline text semantics",
+    description: "[Auto] Fuerte: ver documentación HTML strong.",
+  },
+  sub: {
+    eshtml: "sub",
+    html: "sub",
+    category: "Inline text semantics",
+    description: "[Auto] Subíndice: ver documentación HTML sub.",
+  },
+  sup: {
+    eshtml: "sup",
+    html: "sup",
+    category: "Inline text semantics",
+    description: "[Auto] Superíndice: ver documentación HTML sup.",
+  },
+  tiempo: {
+    eshtml: "tiempo",
+    html: "time",
+    category: "Inline text semantics",
+    description: "[Auto] Tiempo: ver documentación HTML time.",
+  },
+  pequeño: {
+    eshtml: "pequeño",
+    html: "small",
+    category: "Inline text semantics",
+    description: "[Auto] Pequeño: ver documentación HTML small.",
+  },
+  plantilla: {
+    eshtml: "plantilla",
+    html: "template",
+    category: "Other",
+    description: "[Auto] Plantilla: ver documentación HTML template.",
+  },
 };
