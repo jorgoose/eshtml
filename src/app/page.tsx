@@ -80,7 +80,7 @@ export default function Home() {
                   Empezar con EsHTML
                 </Link>
                 <Link
-                  href="/docs"
+                  href="/tutorial"
                   className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-semibold tracking-wide text-shadow transition-colors"
                   style={{ textShadow: "0 1px 2px rgba(0,0,0,0.3)" }}
                 >

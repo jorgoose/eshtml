@@ -2,7 +2,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { FileText, X, ChevronRight } from 'lucide-react';
 import { docsNavigation } from '@/lib/docsNavigation';
 
 type DocsSidebarProps = {
@@ -48,13 +48,19 @@ export function DocsSidebar({ activePath }: DocsSidebarProps) {
   return (
     <>
       {/* Mobile Toggle Bar */}
-      <div className="md:hidden fixed top-16 left-0 right-0 h-12 bg-gray-900 border-b border-gray-800 z-30">
+      <div className="md:hidden fixed top-16 left-0 right-0 h-12 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 z-30">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="flex items-center px-4 h-full text-gray-300 hover:text-white"
+          className="flex items-center justify-between w-full px-4 h-full text-gray-300 hover:text-white hover:bg-gray-800/50 transition-colors"
         >
-          <Menu className="w-5 h-5 mr-2" />
-          <span>Menu</span>
+          <div className="flex items-center">
+            <FileText className="w-5 h-5 mr-3" />
+            <span className="font-medium">Documentación</span>
+          </div>
+          <div className="flex items-center">
+            <span className="text-xs text-gray-400 mr-2">Abrir menú</span>
+            <ChevronRight className={`w-4 h-4 transition-transform ${isMobileMenuOpen ? 'rotate-90' : ''}`} />
+          </div>
         </button>
       </div>
 

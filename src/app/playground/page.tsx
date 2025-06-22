@@ -84,94 +84,94 @@ export default function Playground() {
         <div className="relative max-w-7xl mx-auto px-4 py-8 lg:py-12">
           <h1 className="hidden lg:block text-3xl lg:text-4xl font-bold text-white mb-6 lg:mb-8 lg:ml-0 ml-16">
             Área de Práctica EsHTML
-          </h1>
+        </h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {/* Editor Container */}
-            <div className="rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
-              {/* Editor Header */}
-              <div className="bg-gray-950/80 border-b border-gray-800">
-                <div className="px-4 py-3 bg-gray-900/80 w-full">
-                  <span className="text-gray-300 text-sm font-medium">entrada.eshtml</span>
-                </div>
-              </div>
-              {/* Editor Content */}
-              <div className="bg-gray-900/50">
-                <div className="flex h-[400px] lg:h-[500px]">
-                  <LineNumbers count={eshtmlCode.split('\n').length} />
-                  <CodeEditor 
-                    code={eshtmlCode}
-                    onChange={setEshtmlCode}
-                  />
-                </div>
+          {/* Editor Container */}
+          <div className="rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
+            {/* Editor Header */}
+            <div className="bg-gray-950/80 border-b border-gray-800">
+              <div className="px-4 py-3 bg-gray-900/80 w-full">
+                <span className="text-gray-300 text-sm font-medium">entrada.eshtml</span>
               </div>
             </div>
-
-            {/* Mock Browser Window */}
-            <div className="rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
-              {/* Browser Chrome */}
-              <div className="bg-gray-950/80 border-b border-gray-800 px-4 py-3">
-                <div className="flex items-center space-x-2">
-                  <div className="flex space-x-1.5">
-                    <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-                  </div>
-                  <div className="ml-4 bg-gray-900/80 rounded-md px-3 py-1.5">
-                    <span className="text-gray-400 text-xs truncate max-w-[200px] lg:max-w-none">{pageTitle}</span>
-                  </div>
-                </div>
-              </div>
-              {/* Browser Content */}
-              <div className="bg-white h-[400px] lg:h-[500px] overflow-auto shadow-inner">
-                {transpileError ? (
-                  <div className="p-4 text-red-600">
-                    Error en la conversión: {transpileError}
-                  </div>
-                ) : (
-                  <iframe
-                    srcDoc={transpiledHtml}
-                    title={pageTitle}
-                    className="w-full h-full"
-                  ></iframe>
-                )}
+            {/* Editor Content */}
+            <div className="bg-gray-900/50">
+                <div className="flex h-[400px] lg:h-[500px]">
+                <LineNumbers count={eshtmlCode.split('\n').length} />
+                <CodeEditor 
+                  code={eshtmlCode}
+                  onChange={setEshtmlCode}
+                />
               </div>
             </div>
           </div>
 
-          {/* Collapsible Transpiled HTML */}
-          <div className="mt-6 lg:mt-8">
-            <button
-              onClick={() => setShowTranspiled(!showTranspiled)}
-              className="flex items-center space-x-2 text-gray-300 hover:text-orange-500 transition-colors focus:outline-none"
-            >
-              <span>Mostrar código HTML transpiliado</span>
-              {showTranspiled ? (
-                <AiOutlineUp className="w-5 h-5" />
-              ) : (
-                <AiOutlineDown className="w-5 h-5" />
-              )}
-            </button>
-
-            {showTranspiled && (
-              <div className="mt-4 rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
-                <div className="bg-gray-950/80 border-b border-gray-800">
-                  <div className="px-4 py-3 bg-gray-900/80">
-                    <span className="text-gray-300 text-sm font-medium">salida.html</span>
-                  </div>
+          {/* Mock Browser Window */}
+          <div className="rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
+            {/* Browser Chrome */}
+            <div className="bg-gray-950/80 border-b border-gray-800 px-4 py-3">
+              <div className="flex items-center space-x-2">
+                <div className="flex space-x-1.5">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                 </div>
-                <div className="bg-gray-900/50 flex h-[300px] lg:h-[400px]">
-                  <LineNumbers count={transpiledHtml.split('\n').length} />
-                  <CodeEditor 
-                    code={transpileError ? 'Error en la conversión' : transpiledHtml}
-                    readOnly={true}
-                  />
+                <div className="ml-4 bg-gray-900/80 rounded-md px-3 py-1.5">
+                    <span className="text-gray-400 text-xs truncate max-w-[200px] lg:max-w-none">{pageTitle}</span>
                 </div>
               </div>
-            )}
+            </div>
+            {/* Browser Content */}
+              <div className="bg-white h-[400px] lg:h-[500px] overflow-auto shadow-inner">
+              {transpileError ? (
+                <div className="p-4 text-red-600">
+                  Error en la conversión: {transpileError}
+                </div>
+              ) : (
+                <iframe
+                  srcDoc={transpiledHtml}
+                    title={pageTitle}
+                  className="w-full h-full"
+                ></iframe>
+              )}
+            </div>
           </div>
         </div>
-      </main>
+
+        {/* Collapsible Transpiled HTML */}
+          <div className="mt-6 lg:mt-8">
+          <button
+            onClick={() => setShowTranspiled(!showTranspiled)}
+            className="flex items-center space-x-2 text-gray-300 hover:text-orange-500 transition-colors focus:outline-none"
+          >
+            <span>Mostrar código HTML transpiliado</span>
+            {showTranspiled ? (
+              <AiOutlineUp className="w-5 h-5" />
+            ) : (
+              <AiOutlineDown className="w-5 h-5" />
+            )}
+          </button>
+
+          {showTranspiled && (
+            <div className="mt-4 rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
+              <div className="bg-gray-950/80 border-b border-gray-800">
+                <div className="px-4 py-3 bg-gray-900/80">
+                  <span className="text-gray-300 text-sm font-medium">salida.html</span>
+                </div>
+              </div>
+                <div className="bg-gray-900/50 flex h-[300px] lg:h-[400px]">
+                <LineNumbers count={transpiledHtml.split('\n').length} />
+                <CodeEditor 
+                  code={transpileError ? 'Error en la conversión' : transpiledHtml}
+                  readOnly={true}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </main>
     </>
   );
 }
