@@ -48,7 +48,7 @@ export default function Home() {
           animation: "gradient 15s ease infinite",
         }}
       >
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-3xl"></div>
+        <div className="absolute inset-0 bg-gray-900/40 backdrop-blur-3xl"></div>
       </div>
 
       {/* Content */}
