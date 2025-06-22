@@ -65,7 +65,7 @@ export function Nav({ referenceButton }: NavProps) {
         <>
           {/* Backdrop */}
           <div 
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+            className="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-40"
             onClick={() => setIsMenuOpen(false)}
           />
           
