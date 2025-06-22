@@ -21,8 +21,8 @@ export default function DocsPage() {
                   Bienvenido a la documentación de EsHTML. Aquí encontrarás todo lo que necesitas para empezar a usar EsHTML.
                 </p>
 
-                {/* Make grid single column on mobile */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 not-prose">
+                {/* Make grid 3 columns on desktop, single column on mobile */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 not-prose">
                   <Link href="/docs/introduccion/que-es-eshtml" 
                     className="block p-4 md:p-6 bg-gray-900/50 rounded-lg border border-gray-800/50 hover:border-orange-500/50 transition-colors">
                     <h2 className="text-xl md:text-2xl font-semibold text-white mb-2">Introducción</h2>
@@ -33,6 +33,30 @@ export default function DocsPage() {
                     className="block p-4 md:p-6 bg-gray-900/50 rounded-lg border border-gray-800/50 hover:border-orange-500/50 transition-colors">
                     <h2 className="text-xl md:text-2xl font-semibold text-white mb-2">Referencia</h2>
                     <p className="text-gray-300">Consulta la documentación detallada de etiquetas y atributos.</p>
+                  </Link>
+
+                  <Link href="/tutorial"
+                    className="block p-4 md:p-6 bg-gray-900/50 rounded-lg border border-gray-800/50 hover:border-orange-500/50 transition-colors">
+                    <h2 className="text-xl md:text-2xl font-semibold text-white mb-2">Tutorial Interactivo</h2>
+                    <p className="text-gray-300">Sigue nuestro tutorial paso a paso para crear tu primera página web con EsHTML.</p>
+                  </Link>
+
+                  <Link href="/playground"
+                    className="block p-4 md:p-6 bg-gray-900/50 rounded-lg border border-gray-800/50 hover:border-orange-500/50 transition-colors">
+                    <h2 className="text-xl md:text-2xl font-semibold text-white mb-2">Playground</h2>
+                    <p className="text-gray-300">Experimenta con EsHTML en tiempo real en nuestro playground interactivo.</p>
+                  </Link>
+
+                  <Link href="/docs/herramientas"
+                    className="block p-4 md:p-6 bg-gray-900/50 rounded-lg border border-gray-800/50 hover:border-orange-500/50 transition-colors">
+                    <h2 className="text-xl md:text-2xl font-semibold text-white mb-2">Herramientas</h2>
+                    <p className="text-gray-300">Descubre el paquete NPM, extensiones de VSCode y otras herramientas para EsHTML.</p>
+                  </Link>
+
+                  <Link href="/docs/proyecto"
+                    className="block p-4 md:p-6 bg-gray-900/50 rounded-lg border border-gray-800/50 hover:border-orange-500/50 transition-colors">
+                    <h2 className="text-xl md:text-2xl font-semibold text-white mb-2">Proyecto</h2>
+                    <p className="text-gray-300">Conoce más sobre el proyecto EsHTML, su estado actual y cómo contribuir.</p>
                   </Link>
                 </div>
               </article>
