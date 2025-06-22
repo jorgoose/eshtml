@@ -14,6 +14,7 @@ interface TutorialLayoutProps {
 
 export function TutorialLayout({ children, activePath, lessonNumber, totalLessons }: TutorialLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#111827]">
@@ -42,11 +43,11 @@ export function TutorialLayout({ children, activePath, lessonNumber, totalLesson
         </button>
       </div>
 
-      {/* Mobile sidebar overlay */}
+      {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
         <div 
-          className="md:hidden fixed inset-0 bg-black/50 z-40"
-          onClick={() => setSidebarOpen(false)}
+          className="md:hidden fixed inset-0 bg-gray-900/50 z-40" 
+          onClick={() => setSidebarOpen(false)} 
         />
       )}
 
