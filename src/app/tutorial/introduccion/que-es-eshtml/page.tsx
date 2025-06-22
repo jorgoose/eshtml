@@ -7,6 +7,7 @@ import CodeEditor from '@/components/CodeEditor';
 import LineNumbers from '@/components/LineNumbers';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { TutorialSidebar } from '@/components/TutorialSidebar';
 
 export default function QueEsEsHTML() {
   const [comparisonCode] = useState({
@@ -33,6 +34,7 @@ export default function QueEsEsHTML() {
   return (
     <div className="min-h-screen bg-[#111827]">
       <Nav />
+      <TutorialSidebar activePath="/tutorial/introduccion/que-es-eshtml" />
       <div className="bg-orange-500/10 border-b border-orange-500/20 pt-16">
         <div className="max-w-[800px] mx-auto px-6 py-2 text-sm text-orange-300">
           Lección 2 de 24
@@ -40,7 +42,7 @@ export default function QueEsEsHTML() {
       </div>
       
       <div className="flex pt-16">
-        <div className="flex-1">
+        <div className="flex-1 md:ml-64">
           <div className="max-w-[800px] mx-auto px-6 md:px-8 py-12 md:py-16">
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
               ¿Qué es EsHTML?

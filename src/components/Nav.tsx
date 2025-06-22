@@ -5,7 +5,11 @@ import Link from "next/link";
 import { Search, Moon, Menu, X } from "lucide-react";
 import { AiOutlineGithub } from "react-icons/ai";
 
-export function Nav() {
+interface NavProps {
+  referenceButton?: React.ReactNode;
+}
+
+export function Nav({ referenceButton }: NavProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -44,7 +48,8 @@ export function Nav() {
             </button>
           </div>
 
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            {referenceButton}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-300 hover:text-white p-2 rounded-md"

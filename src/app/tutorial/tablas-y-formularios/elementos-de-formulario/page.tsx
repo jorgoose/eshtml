@@ -208,14 +208,14 @@ export default function ElementosFormulario() {
 
               <div className="mt-12 flex justify-between">
                 <Link
-                  href="/tutorial/avanzado/formularios-basicos"
+                  href="/tutorial/tablas-y-formularios/formularios-basicos"
                   className="inline-flex items-center px-6 py-3 text-gray-300 hover:text-white"
                 >
                   <ChevronLeft className="mr-2 w-5 h-5" />
                   <span>Anterior: Formularios Básicos</span>
                 </Link>
                 <Link
-                  href="/tutorial/practicas/comentarios-legibilidad"
+                  href="/tutorial/buenas-practicas/comentarios-legibilidad"
                   className="inline-flex items-center px-6 py-3 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 transition-colors"
                 >
                   <span>Siguiente: Comentarios y Legibilidad</span>

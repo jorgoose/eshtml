@@ -1,9 +1,8 @@
 // src/app/docs/introduccion/aprendizaje-y-practica/page.tsx
 import Link from 'next/link';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, BookOpen, Play } from 'lucide-react';
 import { Nav } from '@/components/Nav';
 import { DocsSidebar } from '@/components/DocsSidebar';
-import Image from 'next/image';
 
 export default function AprendizajePracticaPage() {
   return (
@@ -37,13 +36,8 @@ export default function AprendizajePracticaPage() {
                   {/* Tutorial Section */}
                   <Link href="/tutorial" 
                     className="group block rounded-xl overflow-hidden border border-gray-800/50 hover:border-orange-500/50 transition-colors">
-                    <div className="aspect-video relative bg-gray-900/50">
-                      <Image
-                        src="/images/tutorial-preview.png"
-                        alt="Tutorial Interactivo Preview"
-                        fill
-                        className="object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                      />
+                    <div className="aspect-video relative bg-gray-900/50 flex items-center justify-center">
+                      <BookOpen className="w-24 h-24 text-orange-400 opacity-80 group-hover:opacity-100 transition-opacity" />
                     </div>
                     <div className="p-4 md:p-6 bg-gray-900/50">
                       <h2 className="text-xl md:text-2xl font-semibold text-white mb-2">Tutorial Interactivo</h2>
@@ -70,13 +64,8 @@ export default function AprendizajePracticaPage() {
                   {/* Playground Section */}
                   <Link href="/playground" 
                     className="group block rounded-xl overflow-hidden border border-gray-800/50 hover:border-orange-500/50 transition-colors">
-                    <div className="aspect-video relative bg-gray-900/50">
-                      <Image
-                        src="/images/playground-preview.png"
-                        alt="Playground Preview"
-                        fill
-                        className="object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                      />
+                    <div className="aspect-video relative bg-gray-900/50 flex items-center justify-center">
+                      <Play className="w-24 h-24 text-blue-400 opacity-80 group-hover:opacity-100 transition-opacity" />
                     </div>
                     <div className="p-4 md:p-6 bg-gray-900/50">
                       <h2 className="text-xl md:text-2xl font-semibold text-white mb-2">Playground</h2>

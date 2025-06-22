@@ -3,6 +3,7 @@
 
 import { useState } from 'react';
 import { Nav } from '@/components/Nav';
+import { TutorialSidebar } from '@/components/TutorialSidebar';
 import CodeEditor from '@/components/CodeEditor';
 import LineNumbers from '@/components/LineNumbers';
 import Link from 'next/link';
@@ -22,6 +23,7 @@ export default function PrimerDocumento() {
   return (
     <div className="min-h-screen bg-[#111827]">
       <Nav />
+      <TutorialSidebar activePath="/tutorial/introduccion/primer-documento" />
       <div className="bg-orange-500/10 border-b border-orange-500/20 pt-16">
         <div className="max-w-[800px] mx-auto px-6 py-2 text-sm text-orange-300">
           Lección 3 de 24
@@ -29,7 +31,7 @@ export default function PrimerDocumento() {
       </div>
       
       <div className="flex pt-16">
-        <div className="flex-1">
+        <div className="flex-1 md:ml-64">
           <div className="max-w-[800px] mx-auto px-6 md:px-8 py-12 md:py-16">
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Tu Primer Documento EsHTML
@@ -41,14 +43,14 @@ export default function PrimerDocumento() {
               </p>
 
               <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700/50">
-                <p className="text-lg text-gray-300">
+                <p className="text-lg text-gray-300 mb-3">
                   Esta página tendrá:
-                  <ul className="list-disc list-inside mt-2 space-y-2">
-                    <li>Un título en la pestaña del navegador</li>
-                    <li>Un mensaje grande de bienvenida</li>
-                    <li>Un texto corto que describe la página</li>
-                  </ul>
                 </p>
+                <ul className="list-disc list-inside space-y-2 text-gray-300">
+                  <li>Un título en la pestaña del navegador</li>
+                  <li>Un mensaje grande de bienvenida</li>
+                  <li>Un texto corto que describe la página</li>
+                </ul>
               </div>
 
               <div className="rounded-xl overflow-hidden shadow-2xl bg-gray-950/50 backdrop-blur-sm border border-gray-800/50">
