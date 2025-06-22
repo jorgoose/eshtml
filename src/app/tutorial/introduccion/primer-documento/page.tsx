@@ -21,7 +21,7 @@ export default function PrimerDocumento() {
 </html>`);
 
   return (
-    <TutorialLayout activePath="/tutorial/introduccion/primer-documento" lessonNumber={3} totalLessons={24}>
+    <TutorialLayout activePath="/tutorial/introduccion/primer-documento" lessonNumber={3} totalLessons={22}>
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
         Tu Primer Documento EsHTML
       </h1>

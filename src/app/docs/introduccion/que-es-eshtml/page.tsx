@@ -85,7 +85,7 @@ export default function DocsPage() {
         {/* Main content area - Remove fixed margin on mobile */}
         <div className="flex-1 md:ml-64">
           <div className="max-w-[1200px] mx-auto">
-            {/* Responsive padding */}
+            {/* Responsive padding - Add top margin for mobile to account for sidebar toggle */}
             <div className="px-4 md:px-16 py-8 md:py-12 mt-12 md:mt-0">
               {/* Scrollable breadcrumbs on mobile */}
               <div className="flex items-center text-sm text-gray-400 mb-8 overflow-x-auto">

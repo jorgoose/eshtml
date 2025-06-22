@@ -72,7 +72,7 @@ export default function ElementosEtiquetas() {
   });
 
   return (
-    <TutorialLayout activePath="/tutorial/introduccion/elementos-y-etiquetas" lessonNumber={5} totalLessons={24}>
+    <TutorialLayout activePath="/tutorial/introduccion/elementos-y-etiquetas" lessonNumber={5} totalLessons={22}>
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
         Elementos y Etiquetas
       </h1>

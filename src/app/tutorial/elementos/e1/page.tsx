@@ -20,7 +20,7 @@ export default function EncabezadoPrincipal() {
 </html>`);
 
   return (
-    <TutorialLayout activePath="/tutorial/elementos/e1" lessonNumber={6} totalLessons={24}>
+    <TutorialLayout activePath="/tutorial/elementos/e1" lessonNumber={6} totalLessons={22}>
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
         Encabezado Principal (e1)
       </h1>

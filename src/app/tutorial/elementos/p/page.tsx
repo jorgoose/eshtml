@@ -25,7 +25,7 @@ export default function Parrafos() {
 </html>`);
 
   return (
-    <TutorialLayout activePath="/tutorial/elementos/p" lessonNumber={7} totalLessons={24}>
+    <TutorialLayout activePath="/tutorial/elementos/p" lessonNumber={7} totalLessons={22}>
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
         Párrafos (p)
       </h1>

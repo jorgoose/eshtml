@@ -35,7 +35,7 @@ export default function EstructuraBasica() {
 </html>`);
 
   return (
-    <TutorialLayout activePath="/tutorial/introduccion/estructura-basica" lessonNumber={4} totalLessons={24}>
+    <TutorialLayout activePath="/tutorial/introduccion/estructura-basica" lessonNumber={4} totalLessons={22}>
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
         Estructura Básica de un Documento
       </h1>

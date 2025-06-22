@@ -96,7 +96,7 @@ export function TutorialSidebar({ activePath }: TutorialSidebarProps) {
           background: rgba(107, 114, 128, 0.7);
         }
       `}</style>
-      <div className="p-4 pb-8">
+      <div className="p-4 pb-20">
         <div className="mb-6">
           <Link 
             href="/tutorial" 
