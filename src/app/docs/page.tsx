@@ -29,7 +29,7 @@ export default function DocsPage() {
                     <p className="text-gray-300">Aprende qué es EsHTML y cómo puede ayudarte a aprender desarrollo web.</p>
                   </Link>
                   
-                  <Link href="/docs/referencia/etiquetas"
+                  <Link href="/docs/referencia"
                     className="block p-4 md:p-6 bg-gray-900/50 rounded-lg border border-gray-800/50 hover:border-orange-500/50 transition-colors">
                     <h2 className="text-xl md:text-2xl font-semibold text-white mb-2">Referencia</h2>
                     <p className="text-gray-300">Consulta la documentación detallada de etiquetas y atributos.</p>
