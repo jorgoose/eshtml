@@ -54,7 +54,7 @@ export default function Playground() {
   }, [eshtmlCode, transpiler]);
 
   return (
-    <>
+    <div className="min-h-screen bg-[#111827]">
       <Nav 
         referenceButton={
           <button
@@ -71,20 +71,20 @@ export default function Playground() {
       
       {/* Mobile Sidebar Overlay */}
       {showSidebar && (
-        <div className="lg:hidden fixed inset-0 bg-black/50 z-40" onClick={() => setShowSidebar(false)} />
+        <div className="lg:hidden fixed inset-0 bg-gray-900/50 z-40" onClick={() => setShowSidebar(false)} />
       )}
 
       {/* Sidebar */}
-      <div className={`fixed lg:static lg:block z-50 ${showSidebar ? 'block' : 'hidden'}`}>
+      <div className={`lg:block ${showSidebar ? 'block' : 'hidden'} fixed lg:fixed left-0 top-16 h-full w-64 bg-gray-900/95 backdrop-blur-sm border-r border-gray-800/50 overflow-y-auto z-40`}>
         <TagQuickReference />
       </div>
 
       {/* Main Content */}
       <main className="lg:ml-64 pt-16">
         <div className="relative max-w-7xl mx-auto px-4 py-8 lg:py-12">
-          <h1 className="hidden lg:block text-3xl lg:text-4xl font-bold text-white mb-6 lg:mb-8 lg:ml-0 ml-16">
+          <h1 className="hidden lg:block text-3xl lg:text-4xl font-bold text-white mb-6 lg:mb-8">
             Área de Práctica EsHTML
-        </h1>
+          </h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Editor Container */}
@@ -172,6 +172,6 @@ export default function Playground() {
         </div>
       </div>
     </main>
-    </>
+    </div>
   );
 }
