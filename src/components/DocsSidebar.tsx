@@ -73,7 +73,7 @@ export function DocsSidebar({ activePath }: DocsSidebarProps) {
       {isMobileMenuOpen && (
         <>
           <div 
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
+            className="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-40 md:hidden"
             onClick={() => setIsMobileMenuOpen(false)}
           />
           <div className="fixed inset-y-0 left-0 w-64 bg-[#111827] shadow-xl z-50 md:hidden">
