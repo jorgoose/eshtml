@@ -58,11 +58,10 @@ export default function CodeEditor({ code, onChange, readOnly = false }: CodeEdi
   };
 
   return (
-    <div className="relative flex-1 overflow-auto min-h-[200px] h-48">
+    <div className="relative flex-1 h-full">
       <pre
         ref={preRef}
-        className="absolute w-full h-full m-0 bg-[#18181b] text-gray-100 p-4 font-mono text-sm leading-6 whitespace-pre
-        overflow-auto rounded-lg border border-gray-800/50
+        className="absolute w-full h-full m-0 bg-transparent text-gray-100 p-4 font-mono text-sm leading-6 whitespace-pre
         scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-700/50 hover:scrollbar-thumb-gray-600/50
         [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar]:h-2 
         [&::-webkit-scrollbar-track]:bg-transparent
@@ -77,8 +76,7 @@ export default function CodeEditor({ code, onChange, readOnly = false }: CodeEdi
           onChange={(e) => onChange?.(e.target.value)}
           onScroll={handleScroll}
           onKeyDown={handleKeyDown}
-          className="absolute w-full h-full bg-[#18181b] text-gray-100 caret-white p-4 font-mono text-sm focus:outline-none resize-none leading-6 whitespace-pre
-          overflow-auto rounded-lg border border-gray-800/50
+          className="absolute w-full h-full bg-transparent text-gray-100 caret-white p-4 font-mono text-sm focus:outline-none resize-none leading-6 whitespace-pre
           scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-700/50 hover:scrollbar-thumb-gray-600/50
           [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar]:h-2 
           [&::-webkit-scrollbar-track]:bg-transparent
