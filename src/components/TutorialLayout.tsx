@@ -14,7 +14,6 @@ interface TutorialLayoutProps {
 
 export function TutorialLayout({ children, activePath, lessonNumber, totalLessons }: TutorialLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#111827]">

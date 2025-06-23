@@ -13,6 +13,55 @@ interface CodeEditorProps {
   readOnly?: boolean;
 }
 
+// Add EsHTML language support to Prism
+if (!Prism.languages.eshtml) {
+  Prism.languages.eshtml = {
+    'comment': {
+      pattern: /<!--[\s\S]*?-->/,
+      greedy: true
+    },
+    'tag': {
+      pattern: /<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/,
+      greedy: true,
+      inside: {
+        'tag': {
+          pattern: /^<\/?[^\s>\/]+/,
+          inside: {
+            'punctuation': /^<\/?/,
+            'namespace': /^[^\s>\/:]+:/
+          }
+        },
+        'attr-value': {
+          pattern: /=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,
+          inside: {
+            'punctuation': [
+              /^=/,
+              {
+                pattern: /^(\s*)["']|["']$/,
+                lookbehind: true
+              }
+            ]
+          }
+        },
+        'punctuation': /\/?>/,
+        'attr-name': {
+          pattern: /[^\s>\/]+/,
+          inside: {
+            'namespace': /^[^\s>\/:]+:/
+          }
+        }
+      }
+    },
+    'entity': [
+      {
+        pattern: /&[\da-z]{1,8};/i,
+        alias: 'named-entity'
+      },
+      /&#x?[\da-f]{1,8};/i
+    ]
+  };
+}
+
 export default function CodeEditor({ code, onChange, readOnly = false }: CodeEditorProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const preRef = useRef<HTMLPreElement>(null);
@@ -22,8 +71,8 @@ export default function CodeEditor({ code, onChange, readOnly = false }: CodeEdi
       if (preRef.current) {
         const highlighted = Prism.highlight(
           code,
-          Prism.languages.markup,
-          'markup'
+          Prism.languages.eshtml || Prism.languages.markup,
+          'eshtml'
         );
         preRef.current.innerHTML = highlighted;
       }
@@ -76,7 +125,7 @@ export default function CodeEditor({ code, onChange, readOnly = false }: CodeEdi
           onChange={(e) => onChange?.(e.target.value)}
           onScroll={handleScroll}
           onKeyDown={handleKeyDown}
-          className="absolute w-full h-full bg-transparent text-gray-100 caret-white p-4 font-mono text-sm focus:outline-none resize-none leading-6 whitespace-pre
+          className="absolute w-full h-full bg-transparent text-transparent caret-white p-4 font-mono text-sm focus:outline-none resize-none leading-6 whitespace-pre
           scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-700/50 hover:scrollbar-thumb-gray-600/50
           [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar]:h-2 
           [&::-webkit-scrollbar-track]:bg-transparent

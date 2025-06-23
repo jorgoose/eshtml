@@ -1,23 +1,11 @@
 // src/app/tutorial/introduccion/que-es-eshtml/page.tsx
 'use client';
 
-import { useState } from 'react';
 import { TutorialLayout } from '@/components/TutorialLayout';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 
 export default function QueEsEsHTML() {
-  const [exampleCode] = useState(`<!DOCTYPE html>
-<html>
-  <head>
-    <title>Mi Página de Gatos</title>
-  </head>
-  <body>
-    <h1>¡Me Encantan los Gatos!</h1>
-    <p>Los gatos son mascotas maravillosas.</p>
-  </body>
-</html>`);
-
   return (
     <TutorialLayout activePath="/tutorial/introduccion/que-es-eshtml" lessonNumber={2} totalLessons={22}>
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">

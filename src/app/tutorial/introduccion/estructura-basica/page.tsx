@@ -60,7 +60,7 @@ export default function EstructuraBasica() {
           
           <div className="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50">
             <h3 className="text-lg font-semibold text-white mb-2">2. Elemento HTML</h3>
-            <code className="text-orange-400">&lt;html lang="es"&gt;</code>
+            <code className="text-orange-400">&lt;html lang=&quot;es&quot;&gt;</code>
             <p className="text-gray-300 mt-2 text-sm">El elemento raíz que contiene todo el documento. El atributo <code className="text-blue-400">lang</code> especifica el idioma.</p>
           </div>
           
@@ -84,13 +84,13 @@ export default function EstructuraBasica() {
         <div className="space-y-4">
           <div className="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50">
             <h3 className="text-lg font-semibold text-white mb-2">Codificación de Caracteres</h3>
-            <code className="text-orange-400">&lt;meta charset="UTF-8"&gt;</code>
+            <code className="text-orange-400">&lt;meta charset=&quot;UTF-8&quot;&gt;</code>
             <p className="text-gray-300 mt-2 text-sm">Define la codificación de caracteres para mostrar correctamente acentos y caracteres especiales.</p>
           </div>
           
           <div className="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50">
             <h3 className="text-lg font-semibold text-white mb-2">Viewport</h3>
-            <code className="text-orange-400">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+            <code className="text-orange-400">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code>
             <p className="text-gray-300 mt-2 text-sm">Optimiza la visualización en dispositivos móviles.</p>
           </div>
           

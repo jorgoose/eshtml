@@ -11,7 +11,7 @@ import { TutorialLayout } from '@/components/TutorialLayout';
 
 function CodeWithPreview({ code }: { code: string }) {
   const transpiler = useMemo(() => new EsHTMLTranspiler(), []);
-  const html = useMemo(() => transpiler.transpile(code), [code]);
+  const html = useMemo(() => transpiler.transpile(code), [code, transpiler]);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
@@ -92,7 +92,7 @@ export default function ComentariosLegibilidad() {
 <!-- Añade más contenido y comentarios aquí -->`);
 
   const transpiler = useMemo(() => new EsHTMLTranspiler(), []);
-  const html = useMemo(() => transpiler.transpile(userCode), [userCode]);
+  const html = useMemo(() => transpiler.transpile(userCode), [userCode, transpiler]);
 
   return (
     <TutorialLayout 
