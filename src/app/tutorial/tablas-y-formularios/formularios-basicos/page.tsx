@@ -190,20 +190,20 @@ export default function FormulariosBasicos() {
           </div>
         </div>
 
-        <div className="mt-12 flex justify-between">
+        <div className="mt-12 flex flex-col sm:flex-row justify-between gap-3">
           <Link
             href="/tutorial/tablas-y-formularios/creando-tablas"
-            className="inline-flex items-center px-6 py-3 text-gray-300 hover:text-white"
+            className="inline-flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 bg-gray-700 text-white font-semibold rounded-md hover:bg-gray-600 transition-colors text-sm sm:text-base"
           >
-            <ChevronLeft className="mr-2 w-5 h-5" />
+            <ChevronLeft className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
             <span>Anterior: Creando Tablas</span>
           </Link>
           <Link
             href="/tutorial/tablas-y-formularios/elementos-de-formulario"
-            className="inline-flex items-center px-6 py-3 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 transition-colors"
+            className="inline-flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 transition-colors text-sm sm:text-base"
           >
             <span>Siguiente: Elementos de Formulario</span>
-            <ChevronRight className="ml-2 w-5 h-5" />
+            <ChevronRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
           </Link>
         </div>
       </div>

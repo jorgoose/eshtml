@@ -123,20 +123,20 @@ export default function ElementosEtiquetas() {
           </div>
         </div>
 
-        <div className="mt-12 flex justify-between">
+        <div className="mt-12 flex flex-col sm:flex-row justify-between gap-3">
           <Link
             href="/tutorial/introduccion/estructura-basica"
-            className="inline-flex items-center px-6 py-3 bg-gray-700 text-white font-semibold rounded-md hover:bg-gray-600 transition-colors"
+            className="inline-flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 bg-gray-700 text-white font-semibold rounded-md hover:bg-gray-600 transition-colors text-sm sm:text-base"
           >
-            <ChevronRight className="mr-2 w-5 h-5 rotate-180" />
+            <ChevronRight className="mr-2 w-4 h-4 sm:w-5 sm:h-5 rotate-180" />
             <span>Anterior: Estructura Básica</span>
           </Link>
           <Link
             href="/tutorial/elementos/e1"
-            className="inline-flex items-center px-6 py-3 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 transition-colors"
+            className="inline-flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 transition-colors text-sm sm:text-base"
           >
             <span>Siguiente: Encabezado Principal</span>
-            <ChevronRight className="ml-2 w-5 h-5" />
+            <ChevronRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
           </Link>
         </div>
       </div>
