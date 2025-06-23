@@ -26,7 +26,7 @@ export default function QueEsHTML() {
         ¿Qué es HTML?
       </h1>
       
-      <div className="space-y-6">
+      <div className="space-y-6">cl
         {/* Simple analogy */}
         <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700/50">
           <p className="text-lg text-gray-300">
