@@ -9,20 +9,21 @@ import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 
 export default function Parrafos() {
-  const [exampleCode] = useState(`<html>
-  <head>
-    <title>Párrafos en EsHTML</title>
-  </head>
-  <body>
-    <h1>Mi Página Web</h1>
-    
+  const [exampleCode] = useState(`<!DOCTYPE html>
+<eshtml idioma="es">
+  <cabecera>
+    <título>Párrafos en EsHTML</título>
+  </cabecera>
+  <cuerpo>
+    <e1>Mi Página Web</e1>
+
     <p>Este es mi primer párrafo. Aquí puedo escribir todo el texto que quiera.</p>
-    
+
     <p>Este es mi segundo párrafo. Cada párrafo se muestra en una línea separada.</p>
-    
+
     <p>Los párrafos son perfectos para organizar el contenido de tu página web.</p>
-  </body>
-</html>`);
+  </cuerpo>
+</eshtml>`);
 
   return (
     <TutorialLayout activePath="/tutorial/elementos/p" lessonNumber={7} totalLessons={22}>

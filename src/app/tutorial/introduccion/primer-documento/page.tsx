@@ -10,15 +10,15 @@ import { ChevronRight } from 'lucide-react';
 
 export default function PrimerDocumento() {
   const [exampleCode] = useState(`<!DOCTYPE html>
-<html>
-  <head>
-    <title>Mi Primera Página</title>
-  </head>
-  <body>
-    <h1>¡Hola Mundo!</h1>
+<eshtml idioma="es">
+  <cabecera>
+    <título>Mi Primera Página</título>
+  </cabecera>
+  <cuerpo>
+    <e1>¡Hola Mundo!</e1>
     <p>Esta es mi primera página web.</p>
-  </body>
-</html>`);
+  </cuerpo>
+</eshtml>`);
 
   return (
     <TutorialLayout activePath="/tutorial/introduccion/primer-documento" lessonNumber={3} totalLessons={22}>
@@ -50,20 +50,20 @@ export default function PrimerDocumento() {
           
           <div className="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50">
             <h3 className="text-lg font-semibold text-white mb-2">2. Etiqueta Raíz</h3>
-            <code className="text-orange-400">&lt;html&gt;</code>
-            <p className="text-gray-300 mt-2 text-sm">Contiene todo el contenido de la página.</p>
+            <code className="text-orange-400">&lt;eshtml&gt;</code>
+            <p className="text-gray-300 mt-2 text-sm">Contiene todo el contenido de la página. En EsHTML usamos <code className="text-orange-400">&lt;eshtml&gt;</code> en lugar de <code className="text-gray-400">&lt;html&gt;</code>.</p>
           </div>
-          
+
           <div className="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50">
-            <h3 className="text-lg font-semibold text-white mb-2">3. Sección de Cabeza</h3>
-            <code className="text-orange-400">&lt;head&gt;</code>
-            <p className="text-gray-300 mt-2 text-sm">Contiene información sobre la página (título, metadatos, etc.).</p>
+            <h3 className="text-lg font-semibold text-white mb-2">3. Sección de Cabecera</h3>
+            <code className="text-orange-400">&lt;cabecera&gt;</code>
+            <p className="text-gray-300 mt-2 text-sm">Contiene información sobre la página (título, metadatos, etc.). Se transpila a <code className="text-gray-400">&lt;head&gt;</code>.</p>
           </div>
-          
+
           <div className="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50">
             <h3 className="text-lg font-semibold text-white mb-2">4. Sección del Cuerpo</h3>
-            <code className="text-orange-400">&lt;body&gt;</code>
-            <p className="text-gray-300 mt-2 text-sm">Contiene todo el contenido visible de la página.</p>
+            <code className="text-orange-400">&lt;cuerpo&gt;</code>
+            <p className="text-gray-300 mt-2 text-sm">Contiene todo el contenido visible de la página. Se transpila a <code className="text-gray-400">&lt;body&gt;</code>.</p>
           </div>
         </div>
 

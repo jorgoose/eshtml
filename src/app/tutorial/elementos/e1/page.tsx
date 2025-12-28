@@ -9,15 +9,16 @@ import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 
 export default function EncabezadoPrincipal() {
-  const [exampleCode] = useState(`<html>
-  <head>
-    <title>Mi Página Web</title>
-  </head>
-  <body>
-    <h1>¡Bienvenido a Mi Sitio Web!</h1>
+  const [exampleCode] = useState(`<!DOCTYPE html>
+<eshtml idioma="es">
+  <cabecera>
+    <título>Mi Página Web</título>
+  </cabecera>
+  <cuerpo>
+    <e1>¡Bienvenido a Mi Sitio Web!</e1>
     <p>Este es el contenido de mi página.</p>
-  </body>
-</html>`);
+  </cuerpo>
+</eshtml>`);
 
   return (
     <TutorialLayout activePath="/tutorial/elementos/e1" lessonNumber={6} totalLessons={22}>

@@ -48,18 +48,18 @@ const tutorialContent = {
     title: "Tablas y Formularios",
     description: "Interactuando y presentando datos",
     lessons: [
-      { id: "5-1", title: "Creando Tablas", href: "/tutorial/avanzado/tablas", description: "Organiza datos en formato tabular" },
-      { id: "5-2", title: "Formularios Básicos", href: "/tutorial/avanzado/formularios-basicos", description: "Recopila información del usuario" },
-      { id: "5-3", title: "Elementos de Formulario", href: "/tutorial/avanzado/elementos-formulario", description: "Utiliza distintos tipos de campos" }
+      { id: "5-1", title: "Creando Tablas", href: "/tutorial/tablas-y-formularios/creando-tablas", description: "Organiza datos en formato tabular" },
+      { id: "5-2", title: "Formularios Básicos", href: "/tutorial/tablas-y-formularios/formularios-basicos", description: "Recopila información del usuario" },
+      { id: "5-3", title: "Elementos de Formulario", href: "/tutorial/tablas-y-formularios/elementos-de-formulario", description: "Utiliza distintos tipos de campos" }
     ]
   },
   6: {
     title: "Buenas Prácticas",
     description: "Escribiendo código limpio y eficiente",
     lessons: [
-      { id: "6-1", title: "Comentarios y Legibilidad", href: "/tutorial/practicas/comentarios-legibilidad", description: "Mantén tu código entendible" },
-      { id: "6-2", title: "Validación y Corrección", href: "/tutorial/practicas/validacion-correccion", description: "Asegura que tu código es válido" },
-      { id: "6-3", title: "Organización del Código", href: "/tutorial/practicas/organizacion", description: "Estructura tu proyecto adecuadamente" }
+      { id: "6-1", title: "Comentarios y Legibilidad", href: "/tutorial/buenas-practicas/comentarios-legibilidad", description: "Mantén tu código entendible" },
+      { id: "6-2", title: "Validación y Corrección", href: "/tutorial/buenas-practicas/validacion-y-coreccion", description: "Asegura que tu código es válido" },
+      { id: "6-3", title: "Organización del Código", href: "/tutorial/buenas-practicas/organizacion-del-codigo", description: "Estructura tu proyecto adecuadamente" }
     ]
   },
   7: {

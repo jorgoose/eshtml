@@ -63,39 +63,39 @@ function CodeWithPreview({ code }: { code: string }) {
 export default function Tablas() {
   const [example] = useState({
     eshtml: `<tabla>
-  <cabecera-tabla>
-    <fila-tabla>
-      <celda-encabezado>Estudiante</celda-encabezado>
-      <celda-encabezado>Materia</celda-encabezado>
-      <celda-encabezado>Calificación</celda-encabezado>
-    </fila-tabla>
-  </cabecera-tabla>
-  
-  <cuerpo-tabla>
-    <fila-tabla>
-      <celda>Ana</celda>
-      <celda>Matemáticas</celda>
-      <celda>95</celda>
-    </fila-tabla>
-    <fila-tabla>
-      <celda>Juan</celda>
-      <celda>Matemáticas</celda>
-      <celda>88</celda>
-    </fila-tabla>
-  </cuerpo-tabla>
+  <encabezadot>
+    <ft>
+      <et>Estudiante</et>
+      <et>Materia</et>
+      <et>Calificación</et>
+    </ft>
+  </encabezadot>
+
+  <cuerpot>
+    <ft>
+      <ct>Ana</ct>
+      <ct>Matemáticas</ct>
+      <ct>95</ct>
+    </ft>
+    <ft>
+      <ct>Juan</ct>
+      <ct>Matemáticas</ct>
+      <ct>88</ct>
+    </ft>
+  </cuerpot>
 </tabla>`
   });
 
   const [userCode, setUserCode] = useState(`<tabla>
-  <cabecera-tabla>
-    <fila-tabla>
-      <!-- Añade las celdas de encabezado aquí -->
-    </fila-tabla>
-  </cabecera-tabla>
-  
-  <cuerpo-tabla>
-    <!-- Añade las filas y celdas aquí -->
-  </cuerpo-tabla>
+  <encabezadot>
+    <ft>
+      <!-- Añade las celdas de encabezado aquí con <et> -->
+    </ft>
+  </encabezadot>
+
+  <cuerpot>
+    <!-- Añade las filas <ft> y celdas <ct> aquí -->
+  </cuerpot>
 </tabla>`);
 
   const transpiler = useMemo(() => new EsHTMLTranspiler(), []);
@@ -126,11 +126,11 @@ export default function Tablas() {
           </p>
           <ul className="mt-4 space-y-3 text-gray-300">
             <li>• <code className="text-orange-400">&lt;tabla&gt;</code> - El contenedor principal</li>
-            <li>• <code className="text-orange-400">&lt;cabecera-tabla&gt;</code> - La sección de encabezados</li>
-            <li>• <code className="text-orange-400">&lt;cuerpo-tabla&gt;</code> - Donde va el contenido principal</li>
-            <li>• <code className="text-orange-400">&lt;fila-tabla&gt;</code> - Cada fila de la tabla</li>
-            <li>• <code className="text-orange-400">&lt;celda&gt;</code> - Para datos normales</li>
-            <li>• <code className="text-orange-400">&lt;celda-encabezado&gt;</code> - Para títulos de columnas</li>
+            <li>• <code className="text-orange-400">&lt;encabezadot&gt;</code> - La sección de encabezados (thead)</li>
+            <li>• <code className="text-orange-400">&lt;cuerpot&gt;</code> - Donde va el contenido principal (tbody)</li>
+            <li>• <code className="text-orange-400">&lt;ft&gt;</code> - Cada fila de la tabla (table row)</li>
+            <li>• <code className="text-orange-400">&lt;ct&gt;</code> - Para datos normales (table data)</li>
+            <li>• <code className="text-orange-400">&lt;et&gt;</code> - Para títulos de columnas (table header)</li>
           </ul>
         </div>
 
