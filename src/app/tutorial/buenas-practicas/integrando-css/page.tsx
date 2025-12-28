@@ -175,7 +175,7 @@ export default function IntegrandoCSS() {
         </div>
 
         <h2 className="text-2xl font-bold text-white mt-8 mb-4">
-          Usando el Atributo "clase"
+          Usando el Atributo &quot;clase&quot;
         </h2>
 
         <p className="text-lg text-gray-300 mb-4">
@@ -186,7 +186,7 @@ export default function IntegrandoCSS() {
         <div className="bg-gray-900 rounded-lg p-4 mb-4">
           <p className="text-gray-400 text-sm mb-2">EsHTML:</p>
           <code className="text-orange-400 text-sm">
-            &lt;div clase="contenedor destacado"&gt;Contenido&lt;/div&gt;
+            &lt;div clase=&quot;contenedor destacado&quot;&gt;Contenido&lt;/div&gt;
           </code>
           <p className="text-gray-400 text-sm mt-4 mb-2">CSS (en archivo estilos.css):</p>
           <pre className="text-green-400 text-sm">
@@ -213,7 +213,7 @@ export default function IntegrandoCSS() {
         <div className="bg-gray-900 rounded-lg p-4 mb-4">
           <p className="text-gray-400 text-sm mb-2">EsHTML:</p>
           <code className="text-orange-400 text-sm">
-            &lt;encabezado id="cabecera-principal"&gt;Mi Sitio&lt;/encabezado&gt;
+            &lt;encabezado id=&quot;cabecera-principal&quot;&gt;Mi Sitio&lt;/encabezado&gt;
           </code>
           <p className="text-gray-400 text-sm mt-4 mb-2">CSS:</p>
           <pre className="text-green-400 text-sm">
@@ -228,8 +228,8 @@ export default function IntegrandoCSS() {
         <div className="bg-orange-500/10 rounded-lg p-6 border border-orange-500/20">
           <h3 className="text-lg font-semibold text-white mb-2">⚖️ Clases vs IDs</h3>
           <div className="space-y-2 text-gray-300 text-sm">
-            <p><strong>Clases</strong> (clase="...") - Pueden usarse múltiples veces, ideales para estilos reutilizables</p>
-            <p><strong>IDs</strong> (id="...") - Deben ser únicos en la página, útiles para elementos específicos</p>
+            <p><strong>Clases</strong> (clase=&quot;...&quot;) - Pueden usarse múltiples veces, ideales para estilos reutilizables</p>
+            <p><strong>IDs</strong> (id=&quot;...&quot;) - Deben ser únicos en la página, útiles para elementos específicos</p>
             <p><strong>Recomendación:</strong> Usa clases para estilizar, IDs para JavaScript y navegación por anclas</p>
           </div>
         </div>
@@ -317,7 +317,7 @@ export default function IntegrandoCSS() {
           <h3 className="text-lg font-semibold text-white mb-2">💡 Mejores Prácticas</h3>
           <ul className="text-gray-300 space-y-2 text-sm">
             <li>• Usa archivos CSS externos para proyectos reales (reutilizables y cacheables)</li>
-            <li>• Nombra tus clases de forma descriptiva: <code className="text-orange-400">clase="botón-primario"</code> no <code className="text-orange-400">clase="azul"</code></li>
+            <li>• Nombra tus clases de forma descriptiva: <code className="text-orange-400">clase=&quot;botón-primario&quot;</code> no <code className="text-orange-400">clase=&quot;azul&quot;</code></li>
             <li>• Agrupa estilos relacionados en el mismo archivo CSS</li>
             <li>• Prefiere clases sobre IDs para estilos CSS</li>
             <li>• Mantén tu CSS organizado con comentarios y secciones</li>

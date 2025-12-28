@@ -102,8 +102,8 @@ export default function Imagenes() {
         <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700/50">
           <h3 className="text-lg font-semibold text-white mb-3">Atributos Principales:</h3>
           <ul className="space-y-3 text-gray-300">
-            <li>• <code className="text-orange-400">fte</code> (fuente) - La ruta de la imagen (equivalente a "src" en HTML)</li>
-            <li>• <code className="text-orange-400">ta</code> (texto alternativo) - Descripción de la imagen (equivalente a "alt" en HTML)</li>
+            <li>• <code className="text-orange-400">fte</code> (fuente) - La ruta de la imagen (equivalente a &quot;src&quot; en HTML)</li>
+            <li>• <code className="text-orange-400">ta</code> (texto alternativo) - Descripción de la imagen (equivalente a &quot;alt&quot; en HTML)</li>
             <li>• <code className="text-orange-400">ancho</code> - El ancho de la imagen en píxeles</li>
             <li>• <code className="text-orange-400">alto</code> - La altura de la imagen en píxeles</li>
           </ul>
@@ -116,7 +116,7 @@ export default function Imagenes() {
         <CodeWithPreview code={exampleBasic.eshtml} />
 
         <div className="bg-orange-500/10 rounded-lg p-6 border border-orange-500/20 mt-6">
-          <h3 className="text-lg font-semibold text-white mb-2">⚠️ Importante sobre "ta" (texto alternativo)</h3>
+          <h3 className="text-lg font-semibold text-white mb-2">⚠️ Importante sobre &quot;ta&quot; (texto alternativo)</h3>
           <p className="text-gray-300 text-sm">
             El atributo <code className="text-orange-400">ta</code> es crucial para la accesibilidad. Describe la imagen
             para personas con discapacidad visual y se muestra si la imagen no se puede cargar. Siempre incluye
@@ -143,19 +143,19 @@ export default function Imagenes() {
         <div className="space-y-4">
           <div className="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50">
             <h3 className="text-lg font-semibold text-white mb-2">📁 Rutas Relativas</h3>
-            <code className="text-orange-400 text-sm">fte="imagenes/foto.jpg"</code>
+            <code className="text-orange-400 text-sm">fte=&quot;imagenes/foto.jpg&quot;</code>
             <p className="text-gray-300 mt-2 text-sm">Busca la imagen en una carpeta relativa al archivo HTML</p>
           </div>
 
           <div className="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50">
             <h3 className="text-lg font-semibold text-white mb-2">🌐 URLs Absolutas</h3>
-            <code className="text-orange-400 text-sm">fte="https://ejemplo.com/foto.jpg"</code>
+            <code className="text-orange-400 text-sm">fte=&quot;https://ejemplo.com/foto.jpg&quot;</code>
             <p className="text-gray-300 mt-2 text-sm">Usa una URL completa para imágenes en otros sitios</p>
           </div>
 
           <div className="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50">
             <h3 className="text-lg font-semibold text-white mb-2">📂 Rutas desde la raíz</h3>
-            <code className="text-orange-400 text-sm">fte="/imagenes/foto.jpg"</code>
+            <code className="text-orange-400 text-sm">fte=&quot;/imagenes/foto.jpg&quot;</code>
             <p className="text-gray-300 mt-2 text-sm">Comienza desde la raíz del sitio web</p>
           </div>
         </div>
@@ -193,7 +193,7 @@ export default function Imagenes() {
             <li>• Optimiza el tamaño de tus imágenes antes de subirlas (usa herramientas de compresión)</li>
             <li>• Usa el formato adecuado: JPG para fotos, PNG para logos con transparencia</li>
             <li>• Especifica <code className="text-orange-400">ancho</code> y <code className="text-orange-400">alto</code> para mejorar el rendimiento</li>
-            <li>• Usa nombres de archivo descriptivos: "paisaje-montana.jpg" en vez de "IMG_1234.jpg"</li>
+            <li>• Usa nombres de archivo descriptivos: &quot;paisaje-montana.jpg&quot; en vez de &quot;IMG_1234.jpg&quot;</li>
           </ul>
         </div>
 

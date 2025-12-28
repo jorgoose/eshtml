@@ -92,7 +92,7 @@ export default function Enlaces() {
       <div className="space-y-6">
         <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700/50">
           <p className="text-lg text-gray-300">
-            Los enlaces son lo que hace que la web sea "web". Te permiten conectar páginas entre sí
+            Los enlaces son lo que hace que la web sea &quot;web&quot;. Te permiten conectar páginas entre sí
             y navegar por internet. En EsHTML, crear enlaces es muy simple. 🔗
           </p>
         </div>
@@ -109,8 +109,8 @@ export default function Enlaces() {
         <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700/50">
           <h3 className="text-lg font-semibold text-white mb-3">Atributo Principal:</h3>
           <ul className="space-y-3 text-gray-300">
-            <li>• <code className="text-orange-400">enlace</code> (equivalente a "href" en HTML) - La URL o ruta de destino</li>
-            <li>• <code className="text-orange-400">destino</code> (equivalente a "target" en HTML) - Dónde abrir el enlace</li>
+            <li>• <code className="text-orange-400">enlace</code> (equivalente a &quot;href&quot; en HTML) - La URL o ruta de destino</li>
+            <li>• <code className="text-orange-400">destino</code> (equivalente a &quot;target&quot; en HTML) - Dónde abrir el enlace</li>
             <li>• <code className="text-orange-400">título</code> - Información adicional que aparece al pasar el ratón</li>
           </ul>
         </div>
@@ -130,23 +130,23 @@ export default function Enlaces() {
         <div className="bg-orange-500/10 rounded-lg p-6 border border-orange-500/20">
           <h3 className="text-lg font-semibold text-white mb-2">💡 Rutas Relativas vs Absolutas</h3>
           <div className="text-gray-300 text-sm space-y-2">
-            <p>• <code className="text-orange-400">enlace="/pagina"</code> - Ruta absoluta desde la raíz del sitio</p>
-            <p>• <code className="text-orange-400">enlace="pagina.html"</code> - Ruta relativa a la página actual</p>
-            <p>• <code className="text-orange-400">enlace="https://ejemplo.com"</code> - URL completa a sitio externo</p>
+            <p>• <code className="text-orange-400">enlace=&quot;/pagina&quot;</code> - Ruta absoluta desde la raíz del sitio</p>
+            <p>• <code className="text-orange-400">enlace=&quot;pagina.html&quot;</code> - Ruta relativa a la página actual</p>
+            <p>• <code className="text-orange-400">enlace=&quot;https://ejemplo.com&quot;</code> - URL completa a sitio externo</p>
           </div>
         </div>
 
         <h2 className="text-2xl font-bold text-white mt-8 mb-4">Abrir en Nueva Pestaña</h2>
         <p className="text-lg text-gray-300 mb-4">
-          Usa <code className="text-orange-400">destino="_blank"</code> para abrir enlaces en una nueva pestaña:
+          Usa <code className="text-orange-400">destino=&quot;_blank&quot;</code> para abrir enlaces en una nueva pestaña:
         </p>
         <CodeWithPreview code={exampleNewTab.eshtml} />
 
         <div className="bg-orange-500/10 rounded-lg p-6 border border-orange-500/20">
           <h3 className="text-lg font-semibold text-white mb-2">⚠️ Seguridad con _blank</h3>
           <p className="text-gray-300 text-sm">
-            Cuando uses <code className="text-orange-400">destino="_blank"</code>, considera añadir
-            <code className="text-orange-400"> relación="noopener noreferrer"</code> por razones de seguridad,
+            Cuando uses <code className="text-orange-400">destino=&quot;_blank&quot;</code>, considera añadir
+            <code className="text-orange-400"> relación=&quot;noopener noreferrer&quot;</code> por razones de seguridad,
             especialmente para enlaces a sitios externos.
           </p>
         </div>
@@ -163,7 +163,7 @@ export default function Enlaces() {
             <h3 className="text-lg font-semibold text-white mb-2">📞 Enlaces de Teléfono</h3>
             <div className="rounded-lg overflow-hidden">
               <div className="bg-gray-900 p-3">
-                <code className="text-orange-400 text-sm">&lt;a enlace="tel:+34912345678"&gt;Llámanos&lt;/a&gt;</code>
+                <code className="text-orange-400 text-sm">&lt;a enlace=&quot;tel:+34912345678&quot;&gt;Llámanos&lt;/a&gt;</code>
               </div>
             </div>
           </div>
@@ -172,10 +172,10 @@ export default function Enlaces() {
             <h3 className="text-lg font-semibold text-white mb-2">🔖 Enlaces de Ancla (misma página)</h3>
             <div className="rounded-lg overflow-hidden">
               <div className="bg-gray-900 p-3">
-                <code className="text-orange-400 text-sm">&lt;a enlace="#seccion-2"&gt;Ir a Sección 2&lt;/a&gt;</code>
+                <code className="text-orange-400 text-sm">&lt;a enlace=&quot;#seccion-2&quot;&gt;Ir a Sección 2&lt;/a&gt;</code>
               </div>
             </div>
-            <p className="text-gray-300 mt-2 text-sm">Salta a un elemento con id="seccion-2" en la misma página</p>
+            <p className="text-gray-300 mt-2 text-sm">Salta a un elemento con id=&quot;seccion-2&quot; en la misma página</p>
           </div>
         </div>
 
@@ -208,9 +208,9 @@ export default function Enlaces() {
         <div className="bg-orange-500/10 rounded-lg p-6 border border-orange-500/20">
           <h3 className="text-lg font-semibold text-white mb-2">💡 Mejores Prácticas</h3>
           <ul className="text-gray-300 space-y-2 text-sm">
-            <li>• Usa texto descriptivo: "Descarga el manual PDF" en vez de "Click aquí"</li>
+            <li>• Usa texto descriptivo: &quot;Descarga el manual PDF&quot; en vez de &quot;Click aquí&quot;</li>
             <li>• Los enlaces internos (a tu sitio) generalmente se abren en la misma pestaña</li>
-            <li>• Los enlaces externos pueden abrirse en nueva pestaña con <code className="text-orange-400">destino="_blank"</code></li>
+            <li>• Los enlaces externos pueden abrirse en nueva pestaña con <code className="text-orange-400">destino=&quot;_blank&quot;</code></li>
             <li>• Añade el atributo <code className="text-orange-400">título</code> para información adicional</li>
             <li>• Asegúrate de que el color de los enlaces sea diferente al texto normal</li>
             <li>• Los enlaces visitados a menudo se muestran en un color diferente</li>

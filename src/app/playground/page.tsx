@@ -350,7 +350,7 @@ export default function Playground() {
               <select
                 value=""
                 onChange={(e) => {
-                  handleTemplateChange(e.target.value);
+                  handleTemplateChange(e.target.value as keyof typeof TEMPLATES | '');
                   e.target.value = ''; // Reset after selection
                 }}
                 className="bg-gray-800 text-gray-300 px-3 py-2 rounded-lg border border-gray-700 hover:border-orange-500 transition-colors text-sm"
